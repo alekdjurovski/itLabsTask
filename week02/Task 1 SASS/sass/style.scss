@@ -1,6 +1,138 @@
-$header: "red";
-$main: "blue";
-
-body{
-    background: $header;
+*{
+    // box-sizing: border-box;
 }
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 80% auto;
+    grid-template-rows: 150px 40px auto 30px;
+    grid-template-areas: "head head"
+                        "nav nav"
+                        "main side"
+                        "foot foot";
+
+}
+header{
+    background-color: brown;
+    grid-area: head;
+}
+
+nav{
+    margin:0px;
+    padding: 0px;
+    background-color: grey;
+    grid-area: nav;
+    
+}
+ul{
+    display: flex;
+    flex-direction: row;
+}
+aside{
+    background-color: rgb(60, 158, 190);
+    grid-area: side;
+}
+
+main{
+    background-color: green;
+    grid-area: main;
+}
+.top-pic{
+    background-color: yellow;
+}
+
+footer{
+    background-color: yellowgreen;
+    grid-area: foot;
+}
+
+@media (max-width: 1000px){
+    aside{
+        display: none;
+    }
+    body{
+        grid-template-columns: auto;
+        grid-template-rows: 150px 40px auto 30px;
+        grid-template-areas: "head head"
+                             "nav nav"
+                            "main main"
+                             "foot foot";
+    }
+  }
+
+// .head{
+//     background-color: brown;
+//     width: 100%;
+//     height: 120px;
+// }
+
+// .navbar{
+//     background-color: grey;
+//     width: 100%;
+//     height: 60px;
+// }
+
+// .main{
+//     display: grid;
+//     grid-template-columns: 80% 20%;
+    
+// }
+
+// .leftBar{
+//     background-color: green;
+//     display: grid;
+//     grid-template-columns: auto auto auto auto ;
+//     grid-template-rows: auto auto;
+//     grid-gap: 10px;
+//     grid-template-areas:
+//       "photo photo photo photo"
+//       "items items items items";
+// }
+// .photo{
+//     background-color: yellow;
+//     grid-area: photo;
+//     width: 80%;
+//     justify-items: center;
+//     height: 500px;
+// }
+
+// .items{
+//     display: grid;
+//     grid-template-rows: auto;
+//     grid-template-columns: auto auto auto auto;
+// }
+
+// .item{
+//     grid-area: items;
+//     background-color: orange;
+//     padding: 20px;
+//     margin: 20px;
+//     width: 150px;
+//     height: 150px;
+// }
+
+// .main > div.right-bar{
+//     height: 70vh;
+//     background-color: rgb(60, 158, 190);
+    
+// }
+
+//  .foot{
+//     background-color: yellowgreen;
+//     width: 100%;
+//     height: 50px;
+//  }
+
+//  @media screen and (max-width:1000px){
+//  .leftBar{   display: grid;
+//     grid-template-columns: auto auto;
+//     grid-template-rows: auto auto auto;
+//     grid-gap: 10px;
+//     grid-template-areas:
+//       "photo photo photo photo"
+//       "items items"
+//       "items items";
+//  }
+// }
