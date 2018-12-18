@@ -8,7 +8,7 @@ body {
   grid-template-areas: "head head" "nav nav" "main side" "foot foot"; }
 
 header {
-  background-color: brown;
+  background-color: #771414;
   grid-area: head; }
 
 nav {
@@ -16,28 +16,29 @@ nav {
   margin: 0px;
   padding: 0px;
   background-color: grey; }
-
-ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row; }
-
-ul li {
-  list-style: none; }
-
-a {
-  padding: 5px;
-  margin: 5px;
-  text-decoration: none;
-  color: #fbf7ee; }
-
-a:hover {
-  background-color: lightgrey;
-  color: #691e03; }
+  nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row; }
+  nav ul li {
+    list-style: none;
+    display: inline-block; }
+  nav a {
+    padding: 5px;
+    margin: 5px;
+    text-decoration: none;
+    color: #fbf7ee;
+    -webkit-transition: background-color .5s;
+    -o-transition: background-color .5s;
+    transition: background-color .5s; }
+  nav a:hover {
+    background-color: #ffffff;
+    color: #413a3a;
+    border-radius: 3px; }
 
 #btn {
   display: block;
@@ -56,20 +57,27 @@ a:hover {
   visibility: hidden;
   height: 50px;
   width: 50px;
-  background-color: bisque;
+  background-color: #ffffff;
   float: right;
-  margin: 83px 5px 0px 0px; }
+  margin: 83px 5px 0px 0px;
+  -webkit-transition: background-color .5s;
+  -o-transition: background-color .5s;
+  transition: background-color .5s; }
 
-aside {
-  background-color: #3c9ebe;
+body aside {
+  background-color: blue;
   grid-area: side; }
 
-main {
+body main {
   background-color: green;
   grid-area: main;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 200px 200px;
   grid-template-areas: "hd hd" "ft ft"; }
+
+body footer {
+  background-color: greenyellow;
+  grid-area: foot; }
 
 .Flex {
   width: 80%;
@@ -106,10 +114,6 @@ main {
 .d {
   grid-area: d; }
 
-footer {
-  background-color: yellowgreen;
-  grid-area: foot; }
-
 @media (max-width: 999px) {
   aside {
     display: none; }
@@ -139,7 +143,7 @@ footer {
     visibility: visible; }
   .nav-btn:hover {
     display: block;
-    background-color: blue; }
+    background-color: #413a3a; }
   .hide {
     display: none; }
   button:hover + nav {

@@ -1,3 +1,13 @@
+$hd:  rgb(119, 20, 20);
+$nv: grey;
+$main: green;
+$lgbox:yellow;
+$smbox: orangered;
+$side: blue;
+$ft: greenyellow;
+$hover-bg: #ffffff;
+$hover-color:#413a3a;
+
 body{
     margin: 0;
     padding: 0;
@@ -9,10 +19,9 @@ body{
                          "nav nav"
                          "main side"
                          "foot foot";
-
 }
 header{
-    background-color: brown;
+    background-color: $hd;
     grid-area: head;
 }
 
@@ -20,27 +29,30 @@ nav{
     grid-area: nav;
     margin:0px;
     padding: 0px;
-    background-color: grey;
+    background-color: $nv;
+    ul{
+        display: flex;
+        flex-direction: row;
+    }
+    ul li{
+        list-style: none;
+        display: inline-block;
+    }
+    a {
+        padding: 5px;
+        margin: 5px;
+        text-decoration: none;
+        color:rgb(251, 247, 238);
+        transition: background-color .5s;
+    }
+    a:hover{
+        background-color: $hover-bg;
+        color:$hover-color;
+        border-radius: 3px;
+    }
 }
 
-ul{
-    display: flex;
-    flex-direction: row;
-}
-ul li{
-    
-    list-style: none;
-}
-a {
-    padding: 5px;
-    margin: 5px;
-    text-decoration: none;
-    color:rgb(251, 247, 238);
-}
-a:hover{
-    background-color: lightgrey;
-    color: rgb(105, 30, 3);
-}
+
 // MENU ON HOVER
 #btn {
 	display: block;
@@ -66,22 +78,34 @@ a:hover{
     visibility: hidden;
     height: 50px;
     width: 50px;
-    background-color: bisque;
+    background-color: $hover-bg;
     float: right;
     margin: 83px 5px 0px 0px;
+    transition: background-color .5s;
 }
-aside{
-    background-color: rgb(60, 158, 190);
-    grid-area: side;
+body{
+    aside{
+        background-color: $side;
+        grid-area: side;
+    }
+    main{
+        background-color: $main;
+        grid-area: main;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 200px 200px;
+        grid-template-areas: "hd hd"
+                            "ft ft";
+        article{
+            
+        }
+    }
+    footer{
+        background-color: $ft;
+        grid-area: foot;
+    }
+
 }
-main{
-    background-color: green;
-    grid-area: main;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 200px 200px;
-    grid-template-areas: "hd hd"
-                        "ft ft";
-}
+
 .Flex{
     width: 80%;
     margin: 10px auto;
@@ -89,7 +113,7 @@ main{
 .top-pic{
     
     grid-area: hd;
-    background-color: yellow;
+    background-color: $lgbox;
     padding:15% 5%;
 }
 .items{
@@ -103,7 +127,7 @@ main{
 }
 
 .item{
-    background-color: orangered;
+    background-color: $smbox;
     padding:30px;
     margin: 10px 0px;
 }
@@ -119,10 +143,7 @@ main{
 .d{
     grid-area: d;
 }
-footer{
-    background-color: yellowgreen;
-    grid-area: foot;
-}
+
 
 @media (max-width: 999px){
     aside{
@@ -165,7 +186,7 @@ footer{
     }
     .nav-btn:hover {
         display: block;
-        background-color: blue;
+        background-color: $hover-color;
     }
     .hide{
         display:none;
