@@ -1,0 +1,340 @@
+$hd:  rgb(119, 20, 20);
+$nv: grey;
+$main: green;
+$lgbox:yellow;
+$smbox: orangered;
+$side: blue;
+$ft: greenyellow;
+$hover-bg: #ffffff;
+$hover-color:#413a3a;
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 80% auto;
+    grid-template-rows: 200px auto 30px;
+    grid-template-areas: "head head"
+                         "main side"
+                         "foot foot";
+    aside{
+        background-color: $side;
+        grid-area: side;
+    }
+    main{
+        background-color: $main;
+        grid-area: main;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 200px 200px;
+        grid-template-areas: "hd hd"
+                            "ft ft";
+       
+    }
+    footer{
+        background-color: $ft;
+        grid-area: foot;
+    }
+    .navbar2{
+        grid-area: nav;
+        display: none;
+    }
+   
+
+}
+
+header{
+    grid-area: head;
+        background-color: $hd;}
+    .navbar {
+        // display: flex;
+        padding: 1px;
+        background-color: $nv;
+        margin-top: 150px;
+    ul{
+            display: flex;
+            flex-direction: row;
+        }
+        ul li{
+            list-style: none;
+            //  margin: 15px;
+            // display: inline-block;
+        }
+        a {
+            padding:15px;
+            margin: 5px;
+            text-decoration: none;
+            color:rgb(251, 247, 238);
+            transition: background-color .5s;
+        }
+        a:hover{
+            background-color: $hover-bg;
+            color:$hover-color;
+            border-radius: 3px;
+        }
+    }
+    
+
+
+
+.nav-btn{
+    visibility: hidden;
+    height: 50px;
+    width: 50px;
+    background-color: $hover-bg;
+    float: right;
+    margin: 150px 5px 0px 0px;
+    transition: background-color .5s;
+}
+
+.Grid{
+    width: 80%;
+    margin: 10px auto;
+}
+.top-pic{
+    
+    grid-area: hd;
+    background-color: $lgbox;
+    padding:15% 5%;
+}
+.items{
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+    grid-template-areas: "a b c d";
+    width: 100%;
+    height: 200px;
+}
+
+.item{
+    background-color: $smbox;
+    padding:30px;
+    margin: 10px 0px;
+}
+.a{
+    grid-area: a;
+}
+.b{
+    grid-area: b;
+}
+.c{
+    grid-area: c;
+}
+.d{
+    grid-area: d;
+}
+
+
+@media (max-width: 999px){
+    aside{
+        display: none;
+    }
+    body{
+        grid-template-columns: auto;
+        grid-template-rows: 200px auto 30px;
+        grid-template-areas: "head head"
+                             "main main"
+                             "foot foot";
+    }
+    .items{
+        display: inline-grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 10px;
+        grid-template-areas: "a b"
+                             "c d";
+        width: 100%;
+        height: 400px;
+    }
+    .top-pic{
+        border: 2px solid yellow;
+        height: 70px;
+        margin-bottom: 10px;
+    }
+  }
+
+  @media (max-width: 399px){
+    aside{
+        display: none;
+    }
+    .navbar{
+        display: none;
+    }
+    body{
+        grid-template-columns: auto;
+        grid-template-rows: 200px 15% auto 30px;
+        grid-template-areas: "head head"
+                             "nav nav"
+                             "main main"
+                             "foot foot";
+        .navbar2{
+            grid-area: nav;
+            display: block;
+         }
+         nav {
+            display: flex;
+            padding: 5px;
+            background-color: $nv;
+            ul li{
+                list-style: none; margin: 15px;
+                // display: inline-block;
+            }
+            a {
+                padding: 2px 40px;
+                margin: 5px;
+                text-decoration: none;
+                color:rgb(251, 247, 238);
+                transition: background-color .5s;
+            }
+            a:hover{
+                background-color: $hover-bg;
+                color:$hover-color;
+                border-radius: 3px;
+            }
+        }
+    }
+
+    .nav-btn{
+        visibility: visible;
+        height: 50px;
+        width: 50px;
+        background-color: $hover-bg;
+        float: right;
+        margin: 150px 5px 0px 0px;
+        transition: background-color .5s;
+    }
+    .nav-btn:hover {
+            display: block;
+            background-color: $hover-color;
+            color:$hover-bg;
+        }
+    
+    .items{
+        display: inline-grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 10px;
+        grid-template-areas: "a b"
+                             "c d";
+        width: 100%;
+        height: 400px;
+    }
+    .top-pic{
+        border: 2px solid yellow;
+        height: 70px;
+        margin-bottom: 10px;
+    }
+  }
+
+// ova e eden nacin
+    // header{
+    //     grid-area: head;
+    //     background-color: $hd;
+    //     nav{
+    //         display: flex;
+            
+    //         // margin-top: 150px;
+    //         padding: 5px;
+    //         background-color: $nv;
+    //         ul{
+    //             display: flex;
+    //             flex-direction: column;
+    //             justify-items: center;
+    //             width: 50%;
+    //         }
+    //         ul li{
+    //             list-style: none; margin: 10px auto;justify-items: center;
+    //             // display: inline-block;
+
+    //         }
+    //         a {
+                
+    //             padding: 10px 30px;
+    //             margin: 0px auto;
+    //             text-decoration: none;
+    //             color:rgb(251, 247, 238);
+    //             transition: background-color .5s;
+    //         }
+    //         a:hover{
+    //             background-color: $hover-bg;
+    //             color:$hover-color;
+    //             border-radius: 3px;
+    //         }
+    //     }
+        
+    // }
+// ova e vtor del
+    // ul{
+    //     display: grid;
+    //     grid-template-columns: auto;
+    //     grid-template-rows: repeat (3, 30px);
+    //     grid-template-areas: "home"
+    //                          "pg1"
+    //                          "pg2";}
+    // li{
+    //     width: 100%;
+    // }
+    // nav{
+    //     display: none;
+    // }
+    // .nav-btn{
+    //     visibility: visible;
+    // }
+    // .nav-btn:hover {
+    //     display: block;
+    //     background-color: $hover-color;
+    // }
+    
+    // button:hover + nav{
+    //     display: block;
+    //     grid-template-columns: auto;
+    //     grid-template-rows: repeat (3, 30px);
+    //     grid-template-areas: "home"
+    //                          "pg1"
+    //                          "pg2";
+    // }
+    // ul{
+    //     display: grid;
+    //     grid-template-columns: auto;
+    //     grid-template-rows: repeat (3, 30px);
+    //     grid-template-areas: "home"
+    //                          "pg1"
+                            //  "pg2";
+                            // }
+//     .home{
+//         grid-area: home;
+//     }
+//     .page1{
+//         grid-area: pg1;
+//     }
+//     .page2{
+//         grid-area: pg2;
+//     }
+//     nav:hover {
+//         display: grid;
+//     }
+//     body{
+//         grid-template-columns: auto;
+//         grid-template-rows: 200px auto 30px;
+//         grid-template-areas: "head head"
+//                              "main main"
+//                              "foot foot";
+//     }
+//     .items{
+//         grid-template-columns: auto;
+//         grid-template-rows: repeat(4, 150px);
+//         grid-gap: 5px;
+//         grid-template-areas: "a"
+//                              "b"
+//                              "c"
+//                              "d";
+//         height: 100%;
+      
+//     }
+//     .top-pic{
+//         border: 2px solid yellow;
+//         height: 70px;
+//         margin-bottom: 10px;
+//     }
+//   }
