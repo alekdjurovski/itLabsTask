@@ -11,3 +11,32 @@
     width:100%;
     position:absolute;
     }
+.top-margin{
+    margin-top: 150px;
+}
+body{
+padding-top: 20px;
+background: url(../img/cover.jpeg) no-repeat;
+    background-size: 100%;
+    height: 100vh;
+    width:100%;
+}
+#cover{
+    /* background: url(../img/cover.jpeg) no-repeat; */
+    background-size: 100%;
+    min-height: 
+}
+.parallax { 
+    /* The image used */
+    background: url(../img/cover.jpeg) no-repeat;
+  
+    /* Set a specific height */
+    height: 100%; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  

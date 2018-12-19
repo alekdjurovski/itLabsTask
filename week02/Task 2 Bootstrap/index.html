@@ -13,10 +13,10 @@
         crossorigin="anonymous">
 </head>
 
-<body>
+<body class="padding-top">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">LOGO</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -28,43 +28,30 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
+                    <a class="nav-link" href="#about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
+                    <a class="nav-link" href="#skills">Skills</a>
                 </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="#project">Project</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i> Search</button>
             </form>
         </div>
     </nav>
-    <div class="container">
-        <div class="jumbotron">
-            <h1 class="display-4">Hello, world!</h1>
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention
-                to
-                featured content or information.</p>
-            <hr class="my-4">
-            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-        </div>
+
+    <div id="cover" class="parallax">
+        
     </div>
     <div class="container">
-        <h2>About</h2>
+        <h2 id="about">About</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci tempore alias distinctio laborum, sunt
             veritatis suscipit nostrum nihil cupiditate quibusdam officia rem ex ea quis soluta ratione illo accusamus!
             Possimus, distinctio ullam. Illo dignissimos, natus voluptate ea numquam placeat pariatur est distinctio
@@ -75,8 +62,8 @@
             delectus non adipisci accusantium?
         </p>
     </div>
-    <div class="container">
-        <h2>Services</h2>
+    <div  id="skills" class="container top-margin">
+        <h2 class="top-margin">Services</h2>
         <!-- <div class="container"> -->
         <div class="row">
             <div class="col-lg">
@@ -118,8 +105,8 @@
         </div>
         <!-- </div> -->
     </div>
-    <div class="container">
-        <h2>Portfolio</h2>
+    <div id="project" class="container">
+        <h2 >Project</h2>
         <div class="row">
             <div class="col-lg-4">
                 <div class="card" style="width: 18rem;">
@@ -166,10 +153,10 @@
 
 
         <!--Section: Contact v.1-->
-        <section class="section pb-5">
+        <!-- <section class="section pb-5"> -->
 
             <!--Section heading-->
-            <h2 class="section-heading h1 pt-4">Contact me</h2>
+            <h2 id="contact" class="section-heading h1 pt-4">Contact me</h2>
             <!--Section description-->
             <p class="section-description pb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error
                 amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a
@@ -189,7 +176,7 @@
                                 <h3><i class="fa fa-envelope"></i> Write to me:</h3>
                             </div>
 
-                            
+
                             <br>
 
                             <!--Body-->
@@ -206,7 +193,7 @@
                             </div>
 
                             <div class="md-form">
-                                    <i class="fa fa-pencil-alt"></i>
+                                <i class="fa fa-pencil-alt"></i>
                                 <textarea type="text" id="form-text" class="form-control md-textarea" rows="3"></textarea>
                                 <label for="form-text">Message</label>
                             </div>
@@ -260,7 +247,7 @@
 
             </div>
 
-        </section>
+        <!-- </section> -->
         <!--Section: Contact v.1-->
 
 
