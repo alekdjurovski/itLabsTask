@@ -1,42 +1,53 @@
-.map-container-6{
-    overflow:hidden;
-    padding-bottom:56.25%;
-    position:relative;
-    height:0;
-    }
-    .map-container-6 iframe{
-    left:0;
-    top:0;
-    height:100%;
-    width:100%;
-    position:absolute;
-    }
-.top-margin{
-    margin-top: 150px;
-}
 body{
-padding-top: 20px;
-background: url(../img/cover.jpeg) no-repeat;
-    background-size: 100%;
-    height: 100vh;
-    width:100%;
+    margin: 0px;
+    padding: 0px;
+} 
+section{
+    padding: 10px;
+    margin: 5% 0;
 }
 #cover{
-    /* background: url(../img/cover.jpeg) no-repeat; */
-    background-size: 100%;
-    min-height: 
+    width: 100%;
+    margin: 0 auto;
 }
+
+img{
+    height: 100%;
+    width: 100%;
+}
+img:hover {
+   cursor: pointer;
+   /* overflow: hidden; */
+   background: rgba(194, 48, 96, 0.699);
+}
+
+/* parallax effect */
 .parallax { 
-    /* The image used */
-    background: url(../img/cover.jpeg) no-repeat;
-  
-    /* Set a specific height */
-    height: 100%; 
-  
-    /* Create the parallax scrolling effect */
+    background: url(../img/cover1.jpeg)  no-repeat;
+    height: 95vh;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
+  /* parallax end */
+.top-pad {
+    padding: 60px 0;
+}
+/* CONTACT SECTION  */
+
+.map {
+    position:relative;
+    height: 400px
+}
+.map iframe {
+    height:100%;
+    width:100%;
+}
+/* CONTACT END */
+
+footer{
+    text-align: center;
+    padding:5px;
+}
   
