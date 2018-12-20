@@ -1,7 +1,9 @@
 body {
   margin: 0px;
-  padding: 0px; }
+  padding: 0px;
+  background-color: #6D7993 !important; }
   body section {
+    background-color: #435058 !important;
     padding: 10px;
     margin: 5% 0; }
   body footer {
@@ -22,8 +24,10 @@ header div .parallax {
   background-size: cover;
   /* parallax end */ }
 
-nav li {
-  margin: 0 15px; }
+nav {
+  background-color: #681F34 !important; }
+  nav li {
+    margin: 0 15px; }
 
 nav ul {
   margin-left: 20px; }

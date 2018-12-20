@@ -1,8 +1,9 @@
 body{
     margin: 0px;
     padding: 0px;
-    background-color: #681F34;
+    background-color: #6D7993 !important;
     section{
+        background-color: #435058 !important;
         padding: 10px;
         margin: 5% 0;
     }
@@ -32,6 +33,7 @@ header{
 }
 
 nav{
+    background-color: #681F34 !important;
     li{
         margin: 0 15px;
     }
