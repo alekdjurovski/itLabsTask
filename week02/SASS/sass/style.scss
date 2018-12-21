@@ -158,45 +158,35 @@ header{
     aside{
         display: none;
     }
-    .navbar{
+    .navbar ul{
         display: none;
     }
     body{
-        grid-template-columns: auto;
-        grid-template-rows: 200px 15% auto 30px;
-        grid-template-areas: "head head"
-                             "nav nav"
-                             "main main"
-                             "foot foot";
-        .navbar2{
-            grid-area: nav;
-            display: block;
-         }
-         nav {
-            display: flex;
-            padding: 5px;
-            background-color: $nv;
-            ul li{
-                list-style: none; margin: 15px;
-                // display: inline-block;
-            }
-            a {
-                padding: 2px 40px;
-                margin: 5px;
-                text-decoration: none;
-                color:rgb(251, 247, 238);
-                transition: background-color .5s;
-            }
-            a:hover{
-                background-color: $hover-bg;
-                color:$hover-color;
-                border-radius: 3px;
-            }
+        display: block !important;
+        .head{
+            height:10px;
+            width: 100%;
         }
     }
     .navwrap{
         display: none;
 
+
+    }
+    .main{
+        width: 100%;
+        .top-pic{
+            width: 80%;
+        }
+        .items{
+            width: 80%;
+        }
+    }
+
+    .navbar{
+        #btn{
+            margin-top: -50px;
+        }
     }
 
     .nav-btn{
@@ -213,6 +203,13 @@ header{
             background-color: $hover-color;
             color:$hover-bg;
         }
+        #btn:hover + ul{
+            display:block;
+        }
+    
+.navbar2{
+    height: 5px;
+}
     
     .items{
         display: inline-grid;
@@ -230,115 +227,3 @@ header{
         margin-bottom: 10px;
     }
   }
-
-// ova e eden nacin
-    // header{
-    //     grid-area: head;
-    //     background-color: $hd;
-    //     nav{
-    //         display: flex;
-            
-    //         // margin-top: 150px;
-    //         padding: 5px;
-    //         background-color: $nv;
-    //         ul{
-    //             display: flex;
-    //             flex-direction: column;
-    //             justify-items: center;
-    //             width: 50%;
-    //         }
-    //         ul li{
-    //             list-style: none; margin: 10px auto;justify-items: center;
-    //             // display: inline-block;
-
-    //         }
-    //         a {
-                
-    //             padding: 10px 30px;
-    //             margin: 0px auto;
-    //             text-decoration: none;
-    //             color:rgb(251, 247, 238);
-    //             transition: background-color .5s;
-    //         }
-    //         a:hover{
-    //             background-color: $hover-bg;
-    //             color:$hover-color;
-    //             border-radius: 3px;
-    //         }
-    //     }
-        
-    // }
-// ova e vtor del
-    // ul{
-    //     display: grid;
-    //     grid-template-columns: auto;
-    //     grid-template-rows: repeat (3, 30px);
-    //     grid-template-areas: "home"
-    //                          "pg1"
-    //                          "pg2";}
-    // li{
-    //     width: 100%;
-    // }
-    // nav{
-    //     display: none;
-    // }
-    // .nav-btn{
-    //     visibility: visible;
-    // }
-    // .nav-btn:hover {
-    //     display: block;
-    //     background-color: $hover-color;
-    // }
-    
-    // button:hover + nav{
-    //     display: block;
-    //     grid-template-columns: auto;
-    //     grid-template-rows: repeat (3, 30px);
-    //     grid-template-areas: "home"
-    //                          "pg1"
-    //                          "pg2";
-    // }
-    // ul{
-    //     display: grid;
-    //     grid-template-columns: auto;
-    //     grid-template-rows: repeat (3, 30px);
-    //     grid-template-areas: "home"
-    //                          "pg1"
-                            //  "pg2";
-                            // }
-//     .home{
-//         grid-area: home;
-//     }
-//     .page1{
-//         grid-area: pg1;
-//     }
-//     .page2{
-//         grid-area: pg2;
-//     }
-//     nav:hover {
-//         display: grid;
-//     }
-//     body{
-//         grid-template-columns: auto;
-//         grid-template-rows: 200px auto 30px;
-//         grid-template-areas: "head head"
-//                              "main main"
-//                              "foot foot";
-//     }
-//     .items{
-//         grid-template-columns: auto;
-//         grid-template-rows: repeat(4, 150px);
-//         grid-gap: 5px;
-//         grid-template-areas: "a"
-//                              "b"
-//                              "c"
-//                              "d";
-//         height: 100%;
-      
-//     }
-//     .top-pic{
-//         border: 2px solid yellow;
-//         height: 70px;
-//         margin-bottom: 10px;
-//     }
-//   }

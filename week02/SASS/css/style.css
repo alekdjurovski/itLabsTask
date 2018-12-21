@@ -122,38 +122,23 @@ header {
 @media (max-width: 399px) {
   aside {
     display: none; }
-  .navbar {
+  .navbar ul {
     display: none; }
   body {
-    grid-template-columns: auto;
-    grid-template-rows: 200px 15% auto 30px;
-    grid-template-areas: "head head" "nav nav" "main main" "foot foot"; }
-    body .navbar2 {
-      grid-area: nav;
-      display: block; }
-    body nav {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      padding: 5px;
-      background-color: grey; }
-      body nav ul li {
-        list-style: none;
-        margin: 15px; }
-      body nav a {
-        padding: 2px 40px;
-        margin: 5px;
-        text-decoration: none;
-        color: #fbf7ee;
-        -webkit-transition: background-color .5s;
-        -o-transition: background-color .5s;
-        transition: background-color .5s; }
-      body nav a:hover {
-        background-color: #ffffff;
-        color: #413a3a;
-        border-radius: 3px; }
+    display: block !important; }
+    body .head {
+      height: 10px;
+      width: 100%; }
   .navwrap {
     display: none; }
+  .main {
+    width: 100%; }
+    .main .top-pic {
+      width: 80%; }
+    .main .items {
+      width: 80%; }
+  .navbar #btn {
+    margin-top: -50px; }
   .nav-btn {
     visibility: visible;
     height: 50px;
@@ -168,6 +153,10 @@ header {
     display: block;
     background-color: #413a3a;
     color: #ffffff; }
+  #btn:hover + ul {
+    display: block; }
+  .navbar2 {
+    height: 5px; }
   .items {
     display: inline-grid;
     grid-template-columns: auto auto;
