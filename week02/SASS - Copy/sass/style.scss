@@ -19,8 +19,7 @@ body{
     }
     main{
         background-color: $main;
-        
-    }
+            }
     footer{
         background-color: $ft;
      
@@ -163,8 +162,8 @@ header{
         input{
             color: aliceblue;
             padding: 50px;
-            z-index: 25;
-            position: absolute;
+            z-index: 999999;
+            position: relative;
 
         }
     }

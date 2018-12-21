@@ -12,27 +12,53 @@ body{
     margin: 0;
     padding: 0;
     height: 100vh;
-    display: grid;
-    grid-template-columns: 80% auto;
-    grid-template-rows: 150px 40px auto 30px;
-    grid-template-areas: "head head"
-                         "nav nav"
-                         "main side"
-                         "foot foot";
+    
+    header{
+        background-color: $hd;
+        height: 200px;
+        position: relative;
+    }
+    .navbar{
+        background-color: $hd;
+        height: 60px;
+        // position: relative;
+        position: absolute;
+        margin-top: 150px;
+        width: 100%;
+    }
+    .main{
+        background-color: $main;
+        height: 100%;
+        position: relative;
+        float:left;
+        width: 80%;
+    }
+    aside{
+        background-color: $side;
+        float:right;
+        width: 20%;
+    }
+   .foot{
+        background-color: $ft;
+        height: 40px;
+        // position: relative;
+    }
+
 }
-header{
-    background-color: $hd;
-    grid-area: head;
+
+.right-bar{
+    float: right;
 }
 
 nav{
-    grid-area: nav;
     margin:0px;
     padding: 0px;
     background-color: $nv;
+    
     ul{
         display: flex;
         flex-direction: row;
+        // margin-top: 120px;
     }
     ul li{
         list-style: none;
@@ -53,16 +79,17 @@ nav{
 }
 
 
+
 // MENU ON HOVER
 #btn {
 	display: block;
 
-	width: 150px;
-	height: 150px;
+	width: 60px;
+	height: 60px;
 }
 
-#thumbnail:hover + #title {
-	display: block;
+#btn:hover + #title {
+	display: flex;
 }
 
 #title {
@@ -177,8 +204,8 @@ body{
         display: none;
     }
     nav{
-        grid-area: nav;
-        // display: none;
+        
+        display: none;
     }
     .nav-btn{
         visibility: visible;
@@ -190,26 +217,8 @@ body{
     .hide{
         display:none;
     }
-    button:hover {
-
-    nav{
-            display: grid;
-            grid-template-columns: auto;
-            grid-template-rows: 150px 150px auto 30px;
-            grid-template-areas: "head head"
-            "nav nav"
-
-                                 "main main"
-                                 "foot foot";
-    }
-    }
-    // body{
-    //     grid-template-columns: auto;
-    //     grid-template-rows: 150px auto 30px;
-    //     grid-template-areas: "head head"
-    //                          "main main"
-    //                          "foot foot";
-    // }
+  
+   
     .items{
         grid-template-columns: auto;
         grid-template-rows: repeat(4, 150px);

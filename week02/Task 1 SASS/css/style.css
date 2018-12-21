@@ -1,18 +1,35 @@
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 80% auto;
-  grid-template-rows: 150px 40px auto 30px;
-  grid-template-areas: "head head" "nav nav" "main side" "foot foot"; }
+  height: 100vh; }
+  body header {
+    background-color: #771414;
+    height: 200px;
+    position: relative; }
+  body .navbar {
+    background-color: #771414;
+    height: 60px;
+    position: absolute;
+    margin-top: 150px;
+    width: 100%; }
+  body .main {
+    background-color: green;
+    height: 100%;
+    position: relative;
+    float: left;
+    width: 80%; }
+  body aside {
+    background-color: blue;
+    float: right;
+    width: 20%; }
+  body .foot {
+    background-color: greenyellow;
+    height: 40px; }
 
-header {
-  background-color: #771414;
-  grid-area: head; }
+.right-bar {
+  float: right; }
 
 nav {
-  grid-area: nav;
   margin: 0px;
   padding: 0px;
   background-color: grey; }
@@ -42,11 +59,13 @@ nav {
 
 #btn {
   display: block;
-  width: 150px;
-  height: 150px; }
+  width: 60px;
+  height: 60px; }
 
-#thumbnail:hover + #title {
-  display: block; }
+#btn:hover + #title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
 
 #title {
   color: #ffffff;
@@ -138,7 +157,7 @@ body footer {
   aside {
     display: none; }
   nav {
-    grid-area: nav; }
+    display: none; }
   .nav-btn {
     visibility: visible; }
   .nav-btn:hover {
@@ -146,11 +165,6 @@ body footer {
     background-color: #413a3a; }
   .hide {
     display: none; }
-  button:hover nav {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 150px 150px auto 30px;
-    grid-template-areas: "head head" "nav nav"  "main main" "foot foot"; }
   .items {
     grid-template-columns: auto;
     grid-template-rows: repeat(4, 150px);

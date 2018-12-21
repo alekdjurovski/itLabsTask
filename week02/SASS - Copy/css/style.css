@@ -115,8 +115,8 @@ header {
   label input {
     color: aliceblue;
     padding: 50px;
-    z-index: 25;
-    position: absolute; }
+    z-index: 999999;
+    position: relative; }
   .trigger input[type="checkbox"] + span {
     visibility: hidden;
     opacity: 0;
