@@ -63,9 +63,7 @@ nav {
   height: 60px; }
 
 #btn:hover + #title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
+  display: block; }
 
 #title {
   color: #ffffff;
