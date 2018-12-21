@@ -7,7 +7,6 @@ body {
     background-color: white !important;
     padding: 40px;
     margin: 5% -2%;
-    border-radius: 40px;
     font-family: 'Dosis', sans-serif; }
   body footer {
     text-align: center;
@@ -67,15 +66,26 @@ li i {
 .wide {
   margin: 10px; }
 
+.card-body {
+  text-align: center; }
+  .card-body a {
+    background-color: #fd8469 !important;
+    border-color: #fd8469 !important;
+    color: black;
+    font-weight: 700; }
+  .card-body a:hover {
+    background-color: black; }
+
 div .top-pad {
   padding: 55px 0; }
 
 section h2 {
-  background: url(../img/BG.png) transparent;
-  color: white;
+  color: black;
   padding: 20px;
-  width: 20%;
-  margin: -15px 0 5% 2%; }
+  width: 50%;
+  margin: -5px 0 5% 2%;
+  font-weight: 900;
+  font-size: 2em; }
 
 #about p {
   margin-top: 80px;
@@ -107,7 +117,7 @@ section h2 {
   width: 100%; }
 
 /* CONTACT END */
-/*HOVER EFFECT FOR PROJECT SECTION*/
+/*HOVER plugin FOR PROJECT SECTION*/
 .hovereffect {
   overflow: hidden;
   text-align: center; }

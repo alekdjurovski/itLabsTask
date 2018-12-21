@@ -7,7 +7,7 @@ body{
         background-color: rgb(255, 255, 255) !important;
         padding: 40px;
         margin: 5% -2%;
-        border-radius: 40px;
+        // border-radius: 2px;
         font-family: 'Dosis', sans-serif;
 
     }
@@ -96,6 +96,19 @@ li{
 .wide{
     margin: 10px;
 }
+.card-body{
+    text-align: center;
+    a{
+        background-color: rgb(253, 132, 105) !important; 
+        border-color:  rgb(253, 132, 105) !important;
+        color: black;
+        font-weight: 700;
+  }
+  a:hover {
+      background-color: black;
+  }
+  }
+
 
 div{
     .top-pad {
@@ -105,12 +118,12 @@ div{
 section{
     h2{
 
-        background: url(../img/BG.png) transparent;
-        color:white;
+        color:black;
         padding: 20px;
-        width: 20%;
-        margin: -15px 0 5% 2%;
-       
+        width: 50%;
+        margin: -5px 0 5% 2%;
+        font-weight: 900;
+       font-size: 2em;
        
     }
 }
@@ -163,7 +176,7 @@ section{
 }
 /* CONTACT END */
 
-/*HOVER EFFECT FOR PROJECT SECTION*/
+/*HOVER plugin FOR PROJECT SECTION*/
 .hovereffect {   
     overflow:hidden;
     text-align:center;
