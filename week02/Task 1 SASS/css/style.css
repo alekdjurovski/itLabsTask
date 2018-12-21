@@ -138,7 +138,7 @@ body footer {
   aside {
     display: none; }
   nav {
-    display: none; }
+    grid-area: nav; }
   .nav-btn {
     visibility: visible; }
   .nav-btn:hover {
@@ -146,12 +146,11 @@ body footer {
     background-color: #413a3a; }
   .hide {
     display: none; }
-  button:hover + nav {
-    display: block; }
-  body {
+  button:hover nav {
+    display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 150px auto 30px;
-    grid-template-areas: "head head" "main main" "foot foot"; }
+    grid-template-rows: 150px 150px auto 30px;
+    grid-template-areas: "head head" "nav nav"  "main main" "foot foot"; }
   .items {
     grid-template-columns: auto;
     grid-template-rows: repeat(4, 150px);

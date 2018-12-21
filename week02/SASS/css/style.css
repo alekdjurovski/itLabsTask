@@ -152,6 +152,8 @@ header {
         background-color: #ffffff;
         color: #413a3a;
         border-radius: 3px; }
+  .navwrap {
+    display: none; }
   .nav-btn {
     visibility: visible;
     height: 50px;

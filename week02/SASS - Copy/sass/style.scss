@@ -1,0 +1,254 @@
+$hd:  rgb(119, 20, 20);
+$nv: grey;
+$main: green;
+$lgbox:yellow;
+$smbox: orangered;
+$side: blue;
+$ft: greenyellow;
+$hover-bg: #ffffff;
+$hover-color:#413a3a;
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    
+    aside{
+        background-color: $side;
+        
+    }
+    main{
+        background-color: $main;
+        
+    }
+    footer{
+        background-color: $ft;
+     
+    }
+    .navbar2{
+        
+        display: none;
+    }
+   
+
+}
+.hide{
+    visibility: hidden;
+}
+
+.trigger {
+    input[type="checkbox"] {
+      
+      // Hide content via default
+      & + span {
+        visibility: hidden;
+        opacity: 0;
+      
+        transition: visibility 0s linear 0.33s, opacity 0.33s linear;
+      }
+      
+      // Show if checkbox is clicked
+      &:checked + span {
+        visibility: visible;
+        opacity: 1;
+    
+        transition-delay: 0s;
+      }
+    }
+  }
+  
+  // Simple styling for message.
+  .msg {
+    display: block;
+    margin-top: 8px;
+    padding: 8px 12px;
+    
+    border: 1px solid #ddd;
+    border-radius: 3px;
+  }
+
+header{
+    grid-area: head;
+        background-color: $hd;}
+    .navbar {
+        // display: flex;
+        padding: 1px;
+        background-color: $nv;
+        margin-top: 150px;
+    ul{
+            display: flex;
+            flex-direction: row;
+        }
+        ul li{
+            list-style: none;
+            //  margin: 15px;
+            // display: inline-block;
+        }
+        a {
+            padding:15px;
+            margin: 5px;
+            text-decoration: none;
+            color:rgb(251, 247, 238);
+            transition: background-color .5s;
+        }
+        a:hover{
+            background-color: $hover-bg;
+            color:$hover-color;
+            border-radius: 3px;
+        }
+    }
+    
+
+
+
+.nav-btn{
+    visibility: hidden;
+    height: 50px;
+    width: 50px;
+    background-color: $hover-bg;
+    float: right;
+    margin: 150px 5px 0px 0px;
+    transition: background-color .5s;
+}
+
+.Grid{
+    width: 80%;
+    margin: 10px auto;
+}
+.top-pic{
+    
+ 
+    background-color: $lgbox;
+    padding:15% 5%;
+}
+.items{
+
+    width: 100%;
+    height: 200px;
+}
+
+.item{
+    background-color: $smbox;
+    padding:30px;
+    margin: 10px 0px;
+}
+
+
+@media (max-width: 999px){
+    aside{
+        display: none;
+    }
+  
+  }
+
+  @media (max-width: 399px){
+    aside{
+        display: none;
+    }
+    .hide{
+        visibility: visible;
+    }
+    .checkbox{
+        visibility: hidden;
+    }
+    .btn{
+        background-color: aliceblue;
+        padding: 20px;
+        float:right;
+        position: relative;
+        margin-top:-50px; 
+        z-index: -2;
+    }
+    label{
+        input{
+            color: aliceblue;
+            padding: 50px;
+            z-index: 25;
+            position: absolute;
+
+        }
+    }
+
+    .trigger {
+        input[type="checkbox"] {
+           
+          
+          // Hide content via default
+          & + span {
+            visibility: hidden;
+            opacity: 0;
+            height: 50px;
+            transition: visibility 0s linear 0.33s, opacity 0.33s linear;
+          }
+          
+          // Show if checkbox is clicked
+          &:checked + span {
+            visibility: visible;
+            opacity: 1;
+            height: 50%;
+        
+            transition-delay: 0.2s;
+            height: 350px;
+
+          }
+        } &:checked + span {
+            visibility: visible;
+            opacity: 1;
+            height: 50%;
+        
+            transition-delay: 0.2s;
+            header{
+                height: 50px;
+            }
+
+          }
+      }
+      
+      // Simple styling for message.
+      .msg {
+        display: block;
+        margin-top: 8px;
+        padding: 8px 12px;
+        
+        border: 1px solid #ddd;
+        border-radius: 3px;
+      }
+    .navbar{
+        // display: none;
+        
+    }
+    .navbar{
+       ul{
+           display: flex;
+           flex-direction: column;
+           width: 100%
+       }
+        
+    }
+    .nav-btn{
+        visibility: visible;
+        height: 50px;
+        width: 50px;
+        background-color: $hover-bg;
+        float: right;
+        margin: 150px 5px 0px 0px;
+        transition: background-color .5s;
+    }
+    .nav-btn:hover {
+            display: block;
+            background-color: $hover-color;
+            color:$hover-bg;
+        }
+    
+    .items{
+    
+        width: 100%;
+        height: 400px;
+    }
+    .top-pic{
+        border: 2px solid yellow;
+        height: 70px;
+        margin-bottom: 10px;
+    }
+  }
+
