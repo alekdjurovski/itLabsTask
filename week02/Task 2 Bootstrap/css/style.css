@@ -1,14 +1,19 @@
 body {
   margin: 0px;
   padding: 0px;
-  background-color: #6D7993 !important; }
+  background: url(../img/BG.png);
+  font-family: 'ZCOOL XiaoWei', serif !important; }
   body section {
-    background-color: #435058 !important;
-    padding: 10px;
-    margin: 5% 0; }
+    background-color: white !important;
+    padding: 40px;
+    margin: 5% -2%;
+    border-radius: 40px;
+    font-family: 'Dosis', sans-serif; }
   body footer {
     text-align: center;
-    padding: 5px; }
+    padding: 25px;
+    background-color: #141414;
+    color: #fd8469; }
 
 header div #cover {
   width: 100%;
@@ -24,16 +29,57 @@ header div .parallax {
   background-size: cover;
   /* parallax end */ }
 
-nav {
-  background-color: #681F34 !important; }
-  nav li {
-    margin: 0 15px; }
+nav form button {
+  border-color: #fd8469 !important;
+  color: #fd8469 !important; }
+
+.btn-org:hover {
+  background-color: #fd8469 !important;
+  color: black !important; }
+
+nav li {
+  margin: 0 15px;
+  font-size: 1.2em; }
+
+ul a:hover {
+  background-color: rgba(253, 132, 105, 0.3);
+  border-radius: 3px;
+  color: white;
+  -webkit-transition-delay: 0.15s;
+  -o-transition-delay: 0.15s;
+  transition-delay: 0.15s; }
+
+header nav {
+  background-color: #141414 !important; }
 
 nav ul {
   margin-left: 20px; }
+  nav ul li a {
+    color: white; }
+
+nav a img {
+  height: 50px; }
+
+li i {
+  color: #fd8469;
+  font-size: 1.5em; }
+
+.wide {
+  margin: 10px; }
 
 div .top-pad {
-  padding: 60px 0; }
+  padding: 55px 0; }
+
+section h2 {
+  background: url(../img/BG.png) transparent;
+  color: white;
+  padding: 20px;
+  width: 20%;
+  margin: -15px 0 5% 2%; }
+
+#about p {
+  margin-top: 80px;
+  line-height: 2em; }
 
 #about img {
   width: 100%;
@@ -45,9 +91,7 @@ div .top-pad {
   width: 100%; }
 
 #project div img:hover {
-  cursor: pointer;
-  /* overflow: hidden; */
-  background: rgba(194, 48, 96, 0.699); }
+  cursor: pointer; }
 
 #services div img {
   height: 100%;
@@ -63,7 +107,7 @@ div .top-pad {
   width: 100%; }
 
 /* CONTACT END */
-/*HOVER EFFECT*/
+/*HOVER EFFECT FOR PROJECT SECTION*/
 .hovereffect {
   overflow: hidden;
   text-align: center; }

@@ -1,15 +1,21 @@
 body{
     margin: 0px;
     padding: 0px;
-    background-color: #6D7993 !important;
+    background: url(../img/BG.png);
+    font-family:'ZCOOL XiaoWei', serif !important;
     section{
-        background-color: #435058 !important;
-        padding: 10px;
-        margin: 5% 0;
+        background-color: rgb(255, 255, 255) !important;
+        padding: 40px;
+        margin: 5% -2%;
+        border-radius: 40px;
+        font-family: 'Dosis', sans-serif;
+
     }
     footer{
         text-align: center;
-        padding:5px;
+        padding:25px;
+        background-color: rgb(20, 20, 20);
+        color:rgb(253, 132, 105) ;
     }
 } 
 header{
@@ -18,7 +24,6 @@ header{
             width: 100%;
             margin: 0 auto;
         }
-        
         .parallax { 
             /* parallax effect */
                 background: url(../img/cover1.jpeg)  no-repeat;
@@ -33,24 +38,87 @@ header{
 }
 
 nav{
-    background-color: #681F34 !important;
-    li{
-        margin: 0 15px;
+    form{
+    button{
+        border-color: rgb(253, 132, 105) !important;
+        color:rgb(253, 132, 105) !important;
     }
+}}
+.btn-org:hover{
+   background-color:  rgb(253, 132, 105) !important;
+   color: black !important;
 }
 
 nav{
+    
+    li{
+        margin: 0 15px;
+        font-size: 1.2em;
+    }
+}
+ul{
+    a:hover{
+        // font-size: 0.5em;
+        background-color: rgba(253, 132, 105, 0.3);
+        border-radius: 3px;
+        color:white;
+        transition-delay: 0.15s;
+    }
+}
+header{
+    nav{
+        background-color: rgb(20, 20, 20) !important;
+    }
+}
+nav{
     ul{
         margin-left: 20px;
+        li{
+            a{
+                color:white;
+            }
+        }
     }
+}
+nav{
+    a{
+        img{
+            height: 50px;
+        }
+    }
+}
+li{
+    i{
+        color: rgb(253, 132, 105);
+        font-size: 1.5em;
+    }
+}
+.wide{
+    margin: 10px;
 }
 
 div{
     .top-pad {
-            padding: 60px 0;
+            padding: 55px 0;
+    }
+}
+section{
+    h2{
+
+        background: url(../img/BG.png) transparent;
+        color:white;
+        padding: 20px;
+        width: 20%;
+        margin: -15px 0 5% 2%;
+       
+       
     }
 }
 #about{
+    p{
+        margin-top: 80px;
+        line-height: 2em;
+    }
     img{
         // height: 100%;
         width: 100%;
@@ -66,8 +134,6 @@ div{
         }
         img:hover {
            cursor: pointer;
-           /* overflow: hidden; */
-           background: rgba(194, 48, 96, 0.699);
         }
     }
 }
@@ -97,7 +163,7 @@ div{
 }
 /* CONTACT END */
 
-/*HOVER EFFECT*/
+/*HOVER EFFECT FOR PROJECT SECTION*/
 .hovereffect {   
     overflow:hidden;
     text-align:center;
