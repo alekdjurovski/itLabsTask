@@ -33,8 +33,8 @@ function addCustomer() {
     var cell4 = row.insertCell(4);
     var cell5 = row.insertCell(5);
     var cell6 = row.insertCell(6);
-    // putting input value to new columns
 
+    // putting input value to new columns
     cell.innerHTML = rowId;
     cell1.innerHTML = fname;
     cell2.innerHTML = address;
@@ -44,12 +44,18 @@ function addCustomer() {
     cell6.innerHTML = '<button onclick="read(this)"><i class="fas fa-eye"></i></button>' +
         '<button ><i class="fas fa-edit"></i></button>' +
         '<button id="hidee" onclick= "deleteRow(this)" ><i class="fas fa-trash-alt"></i></button>';
+
+    document.getElementById("fname").value="";
+    document.getElementById("address").value="";
+    document.getElementById("city").value="";
+    document.getElementById("pin").value="";
+    document.getElementById("country").value="";
 }
 
 
 function read(info) {
     var i = info.parentNode.parentNode.rowIndex;
-    var x = document.getElementById("newTable").rows[i].innerHTML;
+    var x = document.getElementById("newTable").rows[i].innerText;
     alert(x);
     
     // var newLine = "\n";
@@ -62,8 +68,8 @@ function read(info) {
 }
 
 
-function deleteRow(r) {
-    var i = r.parentNode.parentNode.rowIndex;
+function deleteRow(id) {
+    var i = id.parentNode.parentNode.rowIndex;
     document.getElementById("newTable").deleteRow(i);
 }
 
