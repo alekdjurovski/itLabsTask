@@ -10,51 +10,34 @@ function toggleForm() {
 
 
 
-var rowId = 0;
 
 function addCustomer() {
-    rowId++;
-    // get input values
-    var fname = document.getElementById('fname').value;
-    var address = document.getElementById('address').value;
-    var city = document.getElementById('city').value;
-    var pinCode = document.getElementById('pin').value;
-    var country = document.getElementById('country').value;
+    
+    // get input values and put to variables
+    var fName = document.getElementById('name-input').value;
+    var address = document.getElementById('address-in').value;
+    var city = document.getElementById('city-in').value;
+    var pinCode = document.getElementById('pin-in').value;
+    var country = document.getElementById('country-in').value;
 
     // get table
     var table = document.getElementById('newTable');
+    var tableId=table.rows.length;
     // create new row and columns
-    var row = table.insertRow(-1);
+    // var row = table.insertRow(-1);
+    var row = table.insertRow(tableId).innerHTML="<tr id='row"+tableId+"'><td id='id-row"+tableId+"'>"+tableId+"</td><td id='new-name"+tableId+"'>"+fName+"</td><td id='address"+tableId+"'>"+address+"</td><td id='city"+tableId+"'>"+city+"</td><td id='pin"+tableId+"'>"+pinCode+"</td> <td id='country"+tableId+"'>"+country+"</td> <td><button id='read-btn"+tableId+"' onclick='read(this)'><i class='fas fa-eye'></i></button><button id='edit-btn"+tableId+"' onclick='editRow(this)'><i class='fas fa-edit'></i></button><button id='delete-btn"+tableId+"'onclick='deleteRow(this)'><i class='fas fa-trash-alt'></i></button></td></tr>";
 
-    var cell = row.insertCell(0);
-    var cell1 = row.insertCell(1);
-    var cell2 = row.insertCell(2);
-    var cell3 = row.insertCell(3);
-    var cell4 = row.insertCell(4);
-    var cell5 = row.insertCell(5);
-    var cell6 = row.insertCell(6);
-
-    // putting input value to new columns
-    cell.innerHTML = rowId;
-    cell1.innerHTML = fname;
-    cell2.innerHTML = address;
-    cell3.innerHTML = city;
-    cell4.innerHTML = pinCode;
-    cell5.innerHTML = country;
-    cell6.innerHTML = '<button onclick="read(this)"><i class="fas fa-eye"></i></button>' +
-        '<button ><i class="fas fa-edit"></i></button>' +
-        '<button id="hidee" onclick= "deleteRow(this)" ><i class="fas fa-trash-alt"></i></button>';
-
-    document.getElementById("fname").value="";
-    document.getElementById("address").value="";
-    document.getElementById("city").value="";
-    document.getElementById("pin").value="";
-    document.getElementById("country").value="";
+// Clear all inputs
+    document.getElementById("name-input").value="";
+    document.getElementById("address-in").value="";
+    document.getElementById("city-in").value="";
+    document.getElementById("pin-in").value="";
+    document.getElementById("country-in").value="";
 }
 
 
-function read(info) {
-    var i = info.parentNode.parentNode.rowIndex;
+function read(id) {
+    var i = id.parentNode.parentNode.rowIndex;
     var x = document.getElementById("newTable").rows[i].innerText;
     alert(x);
     
@@ -65,6 +48,38 @@ function read(info) {
     //     "Pin Code: " + pinCode +
     //     "Country: " + country;
     // alert(x);
+}
+
+function editRow(evnt){
+// select the id row
+    var i = evnt.parentNode.parentNode.rowIndex;
+    
+
+    var name = document.getElementById("new-name"+i);
+    var address= document.getElementById("address"+i);
+    var city = document.getElementById("city"+i);
+    var pin = document.getElementById("pin"+i);
+    var country = document.getElementById("country"+i); 
+
+    var oldName = name.innerHTML;
+    var oldAddress = address.innerHTML;
+    var oldCity = city.innerHTML;
+    var oldPin = pin.innerHTML;
+    var oldCountry = country.innerHTML;
+	
+    name.innerHTML="<input type='text' id='new-name"+i+"' value='"+oldName+"'>";
+    address.innerHTML="<input type='text' id='address"+i+"' value='"+oldAddress+"'>";
+    city.innerHTML="<input type='text' id='city"+i+"' value='"+oldCity+"'>";
+    pin.innerHTML="<input type='text' id='pin"+i+"' value='"+oldPin+"' >";
+    country.innerHTML="<input type='text' id='country"+i+"' value='"+oldCountry+"'>";
+}
+
+function saveRow(id){
+    var i = id.parentNode.parentNode.rowIndex;
+    
+    var saveName = document.getElementById("new-name"+i).value;
+
+    document.getElementById("new-name"+ i).innerHTML=saveName;
 }
 
 
