@@ -12,7 +12,7 @@ function toggleForm() {
 
 
 function addCustomer() {
-    
+
     // get input values and put to variables
     var fName = document.getElementById('name-input').value;
     var address = document.getElementById('address-in').value;
@@ -22,17 +22,17 @@ function addCustomer() {
 
     // get table
     var table = document.getElementById('newTable');
-    var tableId=table.rows.length;
+    var id = table.rows.length;
     // create new row and columns
     // var row = table.insertRow(-1);
-    var row = table.insertRow(tableId).innerHTML="<tr id='row"+tableId+"'><td id='id-row"+tableId+"'>"+tableId+"</td><td id='new-name"+tableId+"'>"+fName+"</td><td id='address"+tableId+"'>"+address+"</td><td id='city"+tableId+"'>"+city+"</td><td id='pin"+tableId+"'>"+pinCode+"</td> <td id='country"+tableId+"'>"+country+"</td> <td><button id='read-btn"+tableId+"' onclick='read(this)'><i class='fas fa-eye'></i></button><button id='edit-btn"+tableId+"' onclick='editRow(this)'><i class='fas fa-edit'></i></button><button id='delete-btn"+tableId+"'onclick='deleteRow(this)'><i class='fas fa-trash-alt'></i></button></td></tr>";
+    var row = table.insertRow(id).innerHTML = "<tr id='row" + id + "'><td id='id-row" + id + "'>" + id + "</td><td id='name" + id + "'>" + fName + "</td><td id='address" + id + "'>" + address + "</td><td id='city" + id + "'>" + city + "</td><td id='pin" + id + "'>" + pinCode + "</td> <td id='country" + id + "'>" + country + "</td> <td><button id='read-btn" + id + "' onclick='read(this)'><i class='fas fa-eye'></i></button><button id='edit-btn" + id + "' onclick='editRow(this)'><i class='fas fa-edit'></i></button><button id='save-btn" + id + "' class='save' onclick='saveRow(this)'><i class='fas fa-save'></i></button><button id='delete-btn" + id + "'onclick='deleteRow(this)'><i class='fas fa-trash-alt'></i></button></td></tr>";
 
-// Clear all inputs
-    document.getElementById("name-input").value="";
-    document.getElementById("address-in").value="";
-    document.getElementById("city-in").value="";
-    document.getElementById("pin-in").value="";
-    document.getElementById("country-in").value="";
+    // Clear all inputs
+    document.getElementById("name-input").value = "";
+    document.getElementById("address-in").value = "";
+    document.getElementById("city-in").value = "";
+    document.getElementById("pin-in").value = "";
+    document.getElementById("country-in").value = "";
 }
 
 
@@ -40,7 +40,8 @@ function read(id) {
     var i = id.parentNode.parentNode.rowIndex;
     var x = document.getElementById("newTable").rows[i].innerText;
     alert(x);
-    
+    console.log(x);
+
     // var newLine = "\n";
     // var allData = "Name: " + this.fname.value + newLine +
     //     "Address: " + address +
@@ -50,36 +51,49 @@ function read(id) {
     // alert(x);
 }
 
-function editRow(evnt){
-// select the id row
+function editRow(evnt) {
+    // select the id row
     var i = evnt.parentNode.parentNode.rowIndex;
-    
+    document.getElementById("edit-btn" + i).style.display = "none";
+    document.getElementById("save-btn" + i).style.display = "block";
 
-    var name = document.getElementById("new-name"+i);
-    var address= document.getElementById("address"+i);
-    var city = document.getElementById("city"+i);
-    var pin = document.getElementById("pin"+i);
-    var country = document.getElementById("country"+i); 
 
-    var oldName = name.innerHTML;
-    var oldAddress = address.innerHTML;
-    var oldCity = city.innerHTML;
-    var oldPin = pin.innerHTML;
-    var oldCountry = country.innerHTML;
-	
-    name.innerHTML="<input type='text' id='new-name"+i+"' value='"+oldName+"'>";
-    address.innerHTML="<input type='text' id='address"+i+"' value='"+oldAddress+"'>";
-    city.innerHTML="<input type='text' id='city"+i+"' value='"+oldCity+"'>";
-    pin.innerHTML="<input type='text' id='pin"+i+"' value='"+oldPin+"' >";
-    country.innerHTML="<input type='text' id='country"+i+"' value='"+oldCountry+"'>";
+    var nameEdit = document.getElementById("name" + i);
+    var addressEdit = document.getElementById("address" + i);
+    var cityEdit = document.getElementById("city" + i);
+    var pinEdit = document.getElementById("pin" + i);
+    var countryEdit = document.getElementById("country" + i);
+
+    var oldName = nameEdit.innerHTML;
+    var oldAddress = addressEdit.innerHTML;
+    var oldCity = cityEdit.innerHTML;
+    var oldPin = pinEdit.innerHTML;
+    var oldCountry = countryEdit.innerHTML;
+
+    nameEdit.innerHTML = "<input type='text' id='nameEd" + i + "' value='" + oldName + "'>";
+    addressEdit.innerHTML = "<input type='text' id='addressEd" + i + "' value='" + oldAddress + "'>";
+    cityEdit.innerHTML = "<input type='text' id='cityEd" + i + "' value='" + oldCity + "'>";
+    pinEdit.innerHTML = "<input type='text' id='pinEd" + i + "' value='" + oldPin + "' >";
+    countryEdit.innerHTML = "<input type='text' id='countryEd" + i + "' value='" + oldCountry + "'>";
 }
 
-function saveRow(id){
+function saveRow(id) {
     var i = id.parentNode.parentNode.rowIndex;
-    
-    var saveName = document.getElementById("new-name"+i).value;
 
-    document.getElementById("new-name"+ i).innerHTML=saveName;
+    var saveName = document.getElementById("nameEd" + i).value;
+    var saveAddress = document.getElementById("addressEd" + i).value;
+    var saveCity = document.getElementById("cityEd" + i).value;
+    var savePin = document.getElementById("pinEd" + i).value;
+    var saveCountry = document.getElementById("countryEd" + i).value;
+
+    document.getElementById("name" + i).innerHTML = saveName;
+    document.getElementById("address" + i).innerHTML = saveAddress;
+    document.getElementById("city" + i).innerHTML = saveCity;
+    document.getElementById("pin" + i).innerHTML = savePin;
+    document.getElementById("country" + i).innerHTML = saveCountry;
+
+    document.getElementById("edit-btn" + i).style.display = "block";
+    document.getElementById("save-btn" + i).style.display = "none";
 }
 
 
