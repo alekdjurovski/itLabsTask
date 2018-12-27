@@ -25,7 +25,7 @@ function addCustomer() {
     var id = table.rows.length;
     // create new row and columns
     // var row = table.insertRow(-1);
-    var row = table.insertRow(id).innerHTML = "<tr id='row" + id + "'><td id='id-row" + id + "'>" + id + "</td><td id='name" + id + "'>" + fName + "</td><td id='address" + id + "'>" + address + "</td><td id='city" + id + "'>" + city + "</td><td id='pin" + id + "'>" + pinCode + "</td> <td id='country" + id + "'>" + country + "</td> <td><button id='read-btn" + id + "' onclick='read(this)'><i class='fas fa-eye'></i></button><button id='edit-btn" + id + "' onclick='editRow(this)'><i class='fas fa-edit'></i></button><button id='save-btn" + id + "' class='save' onclick='saveRow(this)'><i class='fas fa-save'></i></button><button id='delete-btn" + id + "'onclick='deleteRow(this)'><i class='fas fa-trash-alt'></i></button></td></tr>";
+    var row = table.insertRow(id).innerHTML = "<tr id='row" + id + "'><td id='id-row" + id + "'>" + id + "</td><td id='name" + id + "'>" + fName + "</td><td id='address" + id + "'>" + address + "</td><td id='city" + id + "'>" + city + "</td><td id='pin" + id + "'>" + pinCode + "</td> <td id='country" + id + "'>" + country + "</td> <td><button class='inline' id='read-btn" + id + "' onclick='read(this)'><i class='fas fa-eye'></i></button><button class='inline' id='edit-btn" + id + "' onclick='editRow(this)'><i class='fas fa-edit'></i></button><button id='save-btn" + id + "' class='save' onclick='saveRow(this)'><i class='fas fa-save'></i></button><button class='inline' id='delete-btn" + id + "'onclick='deleteRow(this)'><i class='fas fa-trash-alt'></i></button></td></tr>";
 
     // Clear all inputs
     document.getElementById("name-input").value = "";
@@ -33,15 +33,6 @@ function addCustomer() {
     document.getElementById("city-in").value = "";
     document.getElementById("pin-in").value = "";
     document.getElementById("country-in").value = "";
-
-//     var kopce= document.getElementById("read-btn" + id);
-//     kopce.addEventListener("click", function(){
-//     alert("Name: "+fName + "\n" + 
-//     "Address: "+address+ "\n" +
-//     "City: "+city+ "\n" +
-//     "Pin Code: "+pinCode+ "\n" +
-//     "Country: "+country);
-// })
 }
 
 
@@ -62,7 +53,9 @@ function read(id) {
 function editRow(evnt) {
     // select the id row
     var i = evnt.parentNode.parentNode.rowIndex;
+    document.getElementById("read-btn" + i).style.display = "none";
     document.getElementById("edit-btn" + i).style.display = "none";
+    document.getElementById("delete-btn" + i).style.display = "none";
     document.getElementById("save-btn" + i).style.display = "block";
 
 
@@ -100,7 +93,9 @@ function saveRow(id) {
     document.getElementById("pin" + i).innerHTML = savePin;
     document.getElementById("country" + i).innerHTML = saveCountry;
 
+    document.getElementById("read-btn" + i).style.display = "block";
     document.getElementById("edit-btn" + i).style.display = "block";
+    document.getElementById("delete-btn" + i).style.display = "block";
     document.getElementById("save-btn" + i).style.display = "none";
 }
 
