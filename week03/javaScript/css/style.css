@@ -5,3 +5,6 @@
 .save{
     display: none;
 }
+ .inline{
+     flex-direction: row;
+ }

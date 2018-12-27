@@ -33,22 +33,30 @@ function addCustomer() {
     document.getElementById("city-in").value = "";
     document.getElementById("pin-in").value = "";
     document.getElementById("country-in").value = "";
+
+//     var kopce= document.getElementById("read-btn" + id);
+//     kopce.addEventListener("click", function(){
+//     alert("Name: "+fName + "\n" + 
+//     "Address: "+address+ "\n" +
+//     "City: "+city+ "\n" +
+//     "Pin Code: "+pinCode+ "\n" +
+//     "Country: "+country);
+// })
 }
+
+
 
 
 function read(id) {
     var i = id.parentNode.parentNode.rowIndex;
-    var x = document.getElementById("newTable").rows[i].innerText;
-    alert(x);
-    console.log(x);
-
-    // var newLine = "\n";
-    // var allData = "Name: " + this.fname.value + newLine +
-    //     "Address: " + address +
-    //     "City: " + city +
-    //     "Pin Code: " + pinCode +
-    //     "Country: " + country;
-    // alert(x);
+    var rows = document.getElementsByTagName('tr');
+    var row = rows[i];
+    var col = row.getElementsByTagName('td');
+    var alertList = [];
+    for (var x = 1; x < col.length - 1; x++) {
+        alertList.push("\n" + col[x].innerText);
+    }
+    alert(alertList);
 }
 
 function editRow(evnt) {
