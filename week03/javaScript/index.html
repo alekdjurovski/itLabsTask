@@ -15,7 +15,7 @@
 
 <body>
     <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand">Customer Details</a>
+        <h1>Customer Details</h1>
         <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -63,8 +63,8 @@
                 <label for="country-in">Country</label>
                 <input type="text" class="form-control" id="country-in" placeholder="Enter country">
             </div>
-            <div class="center inline">
-                <input onclick="addCustomer()" class="btn btn-success" value="Create">
+            <div class="center">
+                <input onclick="addCustomer(this)" class="btn btn-success" value="Create">
                 <input class="btn" type="reset" value="Clear Form">
             </div>
         </form>
