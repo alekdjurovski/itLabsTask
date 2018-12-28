@@ -42,7 +42,7 @@
         <form name="myForm" >
             <div class="form-group">
                 <label for="name-input">Name *</label>
-                <input type="text" class="form-control" name="fname" id="name-input" placeholder="Enter name" required>
+                <input type="text" class="form-control" name="fname" id="name-input" placeholder="Enter name" oninput="validateForm()" required>
             </div>
             <div class="form-group">
                 <label for="address-in">Address</label>
@@ -61,7 +61,7 @@
                 <input type="text" class="form-control" id="country-in" placeholder="Enter country">
             </div>
             <p>* Required Filed</p>
-            <input type="submit" id="btn-submit" onclick="addCustomer(this)" class="btn btn-success" value="Create">
+            <input type="submit" id="btn-submit" onclick="addCustomer(this)" class="btn btn-success" value="Create" disabled>
             <input class="btn" type="reset" value="Clear Form">
         </form>
     </div>

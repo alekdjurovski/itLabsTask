@@ -31,7 +31,16 @@ function addCustomer() {
     document.getElementById("pin-in").value = "";
     document.getElementById("country-in").value = "";
 }
-
+function validateForm() {
+        var name = document.getElementById('name-input');
+        var btnValid = document.getElementById('btn-submit');
+        if (name.value.trim() !== ""){
+            btnValid.disabled = false;
+        } else {
+            btnValid.disabled = true;
+        }
+    }
+    
 function read(id) {
     // select the id row
     var i = id.parentNode.parentNode.rowIndex;
