@@ -24,7 +24,6 @@
 
 
     <table id="newTable" class="table mx-auto">
-
         <tr class="thead-dark">
             <th scope="col">#</th>
             <th scope="col">Name</th>
@@ -34,18 +33,16 @@
             <th scope="col">Country</th>
             <th scope="col">Actions</th>
         </tr>
-
-
-
     </table>
+
     <div class="center">
         <button onclick="toggleForm()" class="mx-auto btn btn-outline-success"><i class="fas fa-user"></i> New User</button></div>
     <div id="newUser" style="display: none;" class="container">
         <!-- use inline style for default hide form -->
-        <form class="">
+        <form name="myForm" >
             <div class="form-group">
-                <label for="name-input">Name</label>
-                <input type="text" class="form-control" id="name-input" placeholder="Enter name">
+                <label for="name-input">Name *</label>
+                <input type="text" class="form-control" name="fname" id="name-input" placeholder="Enter name" required>
             </div>
             <div class="form-group">
                 <label for="address-in">Address</label>
@@ -63,14 +60,12 @@
                 <label for="country-in">Country</label>
                 <input type="text" class="form-control" id="country-in" placeholder="Enter country">
             </div>
-            <div class="center">
-                <input onclick="addCustomer(this)" class="btn btn-success" value="Create">
-                <input class="btn" type="reset" value="Clear Form">
-            </div>
+            <p>* Required Filed</p>
+            <input type="submit" id="btn-submit" onclick="addCustomer(this)" class="btn btn-success" value="Create">
+            <input class="btn" type="reset" value="Clear Form">
         </form>
     </div>
-
-
+    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
