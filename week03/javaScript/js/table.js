@@ -30,17 +30,20 @@ function addCustomer() {
     document.getElementById("city-in").value = "";
     document.getElementById("pin-in").value = "";
     document.getElementById("country-in").value = "";
+    validateForm();
 }
+
+// some validation
 function validateForm() {
-        var name = document.getElementById('name-input');
-        var btnValid = document.getElementById('btn-submit');
-        if (name.value.trim() !== ""){
-            btnValid.disabled = false;
-        } else {
-            btnValid.disabled = true;
-        }
+    var name = document.getElementById('name-input').value;
+    var btnValid = document.getElementById('btn-submit');
+    if (name !== "") {
+        btnValid.disabled = false;
+    } else {
+        btnValid.disabled = true;
     }
-    
+}
+
 function read(id) {
     // select the id row
     var i = id.parentNode.parentNode.rowIndex;
