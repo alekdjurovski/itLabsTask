@@ -1,5 +1,5 @@
 function startRun() {
- 
+  alert("The race is going to start...");
   horse1();
   horse2();
   horse3();
@@ -10,12 +10,16 @@ function startRun() {
 
 function horse1() {
   var horse = document.getElementById("horse1");
+  // horse.src = "giphy_s.gif";
+  horse.src = '../img/giphy.gif';
   var pos = 0;
   var speed = Math.floor(Math.random() * 10) + 1;
   var id = setInterval(frame, speed);
   function frame() {
     if (pos == 900) {
       clearInterval(id);
+      // horse.style.left = 0;
+      
     } else {
       pos++;
       horse.style.left = pos + "px";
@@ -26,7 +30,6 @@ function horse1() {
 
 function horse2() {
   var horse = document.getElementById("horse2");
-
   var pos = 0;
   var speed = Math.floor(Math.random() * 10) + 1;
   var id = setInterval(frame, speed);
@@ -42,7 +45,6 @@ function horse2() {
 
 function horse3() {
   var horse3 = document.getElementById("horse3");
-
   var pos = 0;
   var speed = Math.floor(Math.random() * 10) + 1;
   var id = setInterval(frame, speed);
@@ -56,11 +58,8 @@ function horse3() {
     }
   }
 }
-
-
 function horse4() {
   var horse = document.getElementById("horse4");
-
   var pos = 0;
   var speed = Math.floor(Math.random() * 10) + 1;
   var id = setInterval(frame, speed);
@@ -77,7 +76,6 @@ function horse4() {
 
 function horse5() {
   var horse = document.getElementById("horse5");
-
   var pos = 0;
   var speed = Math.floor(Math.random() * 10) + 1;
   var id = setInterval(frame, speed);

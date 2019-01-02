@@ -7,11 +7,11 @@
  
 .row-field{
       background-color: rgb(95, 82, 65);
-      height: 20vh;
+      height: 15vh;
       margin-top: 10px;
   }
 img{
-    height: 20vh;
+    height: 18vh;
 }
 #horse1 {
     height: 20%;
@@ -21,7 +21,6 @@ img{
 #horse2 {
     height: 20%;
     position: absolute;
-    background-color:black;
   }
 #horse3 {
     height: 20%;
