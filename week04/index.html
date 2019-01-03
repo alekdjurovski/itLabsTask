@@ -14,25 +14,31 @@
 </head>
 
 <body>
-    <p><button class="btn btn-success" onclick="startRun()">Start Run</button></p>
+    <p><button id="start-btn" class="btn btn-success" onclick="startRun()">Start Run</button></p>
 
     <div id="field" class="container">
-        <div class="row row-field">
-            <div id="horse1"><img src="./img/horse.gif" alt=""></div>
+        <div class="row row-field"><span id="win-msg">tuka</span>
+            <img id="horse1" src="./img/horse.gif" alt="">
         </div>
         <div class="row row-field">
-            <div id="horse2"><img src="./img/giphy.gif" alt=""></div>
+            <img id="horse2" src="./img/horse.gif" alt="">
         </div>
         <div class="row  row-field">
-            <div id="horse3"><img src="./img/horse.gif" alt=""></div>
+            <img id="horse3" src="./img/horse.gif" alt="">
         </div>
         <div class="row  row-field">
-            <div id="horse4"><img src="./img/horse.gif" alt=""></div>
+            <img id="horse4" src="./img/horse.gif" alt="">
         </div>
         <div class="row  row-field">
-            <div id="horse5"><img src="./img/horse.gif" alt=""></div>
+            <img id="horse5" src="./img/horse.gif" alt="">
         </div>
+        <span id="demo">Dorchoo</span>
+
+        
     </div>
+
+    
+
     <script src="./js/running.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
