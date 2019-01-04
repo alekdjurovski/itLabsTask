@@ -11,59 +11,99 @@
     <title>Horse Rasing</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
+    <link rel="icon" href="./img/favicon.png">
 </head>
 
 <body>
-    <p></p>
-
     <div id="field" class="container">
         <div class="row head">
-            <div class="col-md-4">
-                <button id="start-btn" class="btn btn-primary" onclick="startRun()">Start Run</button>
+            <div class="col-md-2">
+                <button id="start-btn" class="btn rounded-circle btn-primary" onclick="startRun()">Start Run</button>
             </div>
-            <div class="col-md-8">
-                <h3>Result:</h3>
+            <div class="col-md-5">
+                <h3>Last Race:</h3>
                 <table>
                     <tr>
-                        <td class="demo" id="prv"></td>
+                        <td class="win-list" id="prv"></td>
                     </tr>
                     <tr>
-                        <td class="demo" id="vtor"></td>
+                        <td class="win-list" id="vtor"></td>
                     </tr>
                     <tr>
-                        <td class="demo" id="tret"></td>
+                        <td class="win-list" id="tret"></td>
                     </tr>
                     <tr>
-                        <td class="demo" id="cetvrt"></td>
+                        <td class="win-list" id="cetvrt"></td>
                     </tr>
                     <tr>
-                        <td class="demo" id="petti"></td>
+                        <td class="win-list" id="petti"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-5">
+                <h3>Winners:</h3>
+                <table>
+                    <tr>
+                        <td class="win-list" id="prva-trka"></td>
+                    </tr>
+                    <tr>
+                        <td class="win-list" id="vtora-trka"></td>
+                    </tr>
+                    <tr>
+                        <td class="win-list" id="treta-trka"></td>
+                    </tr>
+                    <tr>
+                        <td class="win-list" id="cetvrta-trka"></td>
+                    </tr>
+                    <tr>
+                        <td class="win-list" id="petta-trka"></td>
                     </tr>
                 </table>
             </div>
 
         </div>
         <div class="row row-field row-odd">
-            <img id="horse1" src="./img/bgbg.gif" alt="">
+            <div class="col-md-11">
+                <img id="horse1" src="./img/spirit.png" alt=""><span class="horse-name">Spirit</span>
+            </div>
+            <div class="col-md-1">
+                <img id="flag" src="./img/flag.gif" width="100px" alt="">
+            </div>
+
         </div>
         <div class="row row-field row-odd">
-            <img id="horse2" src="./img/sparkRun.gif" alt="">
+            <div class="col-md-11">
+                <img id="horse2" src="./img/spark.png" alt=""><span class="horse-name">Sharac</span>
+            </div>
+            <div class="col-md-1">
+                <img id="flag" src="./img/flag.gif" width="100px" alt="">
+            </div>
         </div>
         <div class="row  row-field row-odd">
-            <img id="horse3" src="./img/markoRun.gif" alt="">
+            <div class="col-md-11">
+                <img id="horse3" src="./img/marko.png" alt=""><span class="horse-name">Marko</span>
+            </div>
+            <div class="col-md-1">
+                <img id="flag" src="./img/flag.gif" width="100px" alt="">
+            </div>
         </div>
         <div class="row  row-field row-odd">
-            <img id="horse4" src="./img/belco.png" alt="">
+            <div class="col-md-11">
+                <img id="horse4" src="./img/belco.png" alt=""><span class="horse-name">Belco</span>
+            </div>
+            <div class="col-md-1">
+                <img id="flag" src="./img/flag.gif" width="100px" alt="">
+            </div>
         </div>
         <div class="row  row-field row-odd">
-            <img id="horse5" src="./img/bukefalRun.gif" alt="">
+            <div class="col-md-11">
+                <img id="horse5" src="./img/bukefal.png" alt=""><span class="horse-name">Bukefal</span>
+            </div>
+            <div class="col-md-1">
+                <img id="flag" src="./img/flag.gif" width="100px" alt="">
+            </div>
         </div>
-
-
-
     </div>
-
-
 
 
     <script src="./js/running.js"></script>
@@ -73,6 +113,7 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
+
 </body>
 
 </html>

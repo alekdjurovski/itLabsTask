@@ -10,17 +10,15 @@ let horse4speed;
 let horse5speed;
 
 var results = [];
-// let winnerIs = result;
-// let resultList = document.getElementById("demo");
-// resultList.innerHTML=result + "\n";
-
-// let all ={first:'', second:'', third:'',fourth:'', fifth:''}
 var allHorses = [];
 
-
+function removeRaceList() {
+  allHorses.length = 0;
+}
 
 
 function startRun() {
+  removeRaceList();
   alert("The race is going to start...");
   document.getElementById("start-btn").style.display = "none";
   horse1speed = Math.floor((Math.random() * 10) + 1);
@@ -33,72 +31,30 @@ function startRun() {
   horse3();
   horse4();
   horse5();
-  winList();
 }
 
-function winList() {
-  let winner;
-
-  if (horse1speed < horse2speed
-    && horse1speed < horse3speed
-    && horse1speed < horse4speed
-    && horse1speed < horse5speed) {
-    winner = "The winner is Spirit";
-  } else if (horse2speed < horse1speed
-    && horse2speed < horse3speed
-    && horse2speed < horse4speed
-    && horse2speed < horse5speed) {
-    winner = "The winner is Sharac";
-  } else if (horse3speed < horse1speed
-    && horse3speed < horse2speed
-    && horse3speed < horse4speed
-    && horse3speed < horse5speed) {
-    winner = "The winner is Marko";
-  } else if (horse4speed < horse1speed
-    && horse4speed < horse2speed
-    && horse4speed < horse3speed
-    && horse4speed < horse5speed) {
-    winner = "The winner is Belco";
-  } else if (horse5speed < horse1speed
-    && horse5speed < horse2speed
-    && horse5speed < horse3speed
-    && horse5speed < horse4speed) {
-    winner = "The winner is Bukefal";
-  }else{
-    winner = "Two horses are winner";
-  }
-  let finish = results;
-  finish.push(winner);
-  // console.log(finish);
-}
-
-let k = 1;
-var i=0;
+var i = 0;
 function endRace() {
   let numbHorses = allHorses;
-  if (numbHorses.length == k * 5) {
-    //All horse arrived, enable again the Start Run Button
+  if (numbHorses.length == 5) {
+    //enable Start Run Button
     document.getElementById("start-btn").style.display = "block";
     showResult();
-    // for(i; i<results.length; i++){
-    //   let list = document.getElementById('demo').innerHTML = results[i] +"\n";
-    // }
-    k++;
+    winners();
   }
 }
 
 function horse1() {
 
-  // horse.src = "giphy_s.gif";
+  first.src = "./img/spiritRun.gif";
   var pos = 0;
   var id = setInterval(frame, horse1speed);
   function frame() {
     if (pos == 900) {
+      first.src = "./img/spirit.png";
       first.style.left = 0;
       clearInterval(id);
       allHorses.push("Spirit");
-      // let prv = "dorko";
-      // all.first = prv;
       endRace();
     } else {
       pos++;
@@ -109,10 +65,12 @@ function horse1() {
 }
 
 function horse2() {
+  second.src = "./img/sparkRun.gif";
   var pos = 0;
   var id = setInterval(frame, horse2speed);
   function frame() {
     if (pos == 900) {
+      second.src = "./img/spark.png";
       second.style.left = 0;
       clearInterval(id);
       allHorses.push("Sharac");
@@ -125,10 +83,12 @@ function horse2() {
 }
 
 function horse3() {
+  third.src = "./img/markoRun.gif";
   var pos = 0;
   var id = setInterval(frame, horse3speed);
   function frame() {
     if (pos == 900) {
+      third.src = "./img/marko.png";
       third.style.left = 0;
       clearInterval(id);
       allHorses.push("Marko");
@@ -141,11 +101,12 @@ function horse3() {
   }
 }
 function horse4() {
+  fourth.src = "./img/belcoRun.gif";
   var pos = 0;
   var id = setInterval(frame, horse4speed);
   function frame() {
     if (pos == 900) {
-
+      fourth.src = "./img/belco.png";
       fourth.style.left = 0;
       clearInterval(id);
       allHorses.push("Belco");
@@ -159,11 +120,12 @@ function horse4() {
 }
 
 function horse5() {
+  fifth.src = "./img/bukefalRun.gif";
   var pos = 0;
   var id = setInterval(frame, horse5speed);
   function frame() {
-
     if (pos == 900) {
+      fifth.src = "./img/bukefal.png";
       fifth.style.left = 0;
       clearInterval(id);
       allHorses.push("Bukefal");
@@ -175,20 +137,23 @@ function horse5() {
   }
 
 }
-
-
+let list;
+let winn;
 
 function showResult() {
-  let all = allHorses;
-  // let horsess;
-  // let resList = results;
-  for (let i = 0; i < all.length; i++) {
-    // horsess = all[i];
-    let list = document.getElementById('prv').innerText = all[0];
-    let list1 = document.getElementById('vtor').innerText = all[1];
-    let list2 = document.getElementById('tret').innerText = all[2];
-    let list3 = document.getElementById('cetvrt').innerText = all[3];
-    let list4 = document.getElementById('petti').innerText = all[4];
-    console.log(all[i]);
-  }
+  list = document.getElementById('prv').innerText ="1. " + allHorses[0];
+  let list1 = document.getElementById('vtor').innerText ="2. " + allHorses[1];
+  let list2 = document.getElementById('tret').innerText ="3. " + allHorses[2];
+  let list3 = document.getElementById('cetvrt').innerText = "4. " +allHorses[3];
+  let list4 = document.getElementById('petti').innerText = "5. " +allHorses[4];
+}
+
+
+function winners() {
+  results.push(list);
+  document.getElementById('prva-trka').innerText ="Winner is " + results[0];
+  document.getElementById('vtora-trka').innerText ="Winner is " + results[1];
+  document.getElementById('treta-trka').innerText ="Winner is " + results[2];
+  document.getElementById('cetvrta-trka').innerText ="Winner is " + results[3];
+  document.getElementById('petta-trka').innerText ="Winner is " + results[4];
 }
