@@ -14,30 +14,57 @@
 </head>
 
 <body>
-    <p><button id="start-btn" class="btn btn-success" onclick="startRun()">Start Run</button></p>
+    <p></p>
 
     <div id="field" class="container">
-        <div class="row row-field"><span id="win-msg">tuka</span>
-            <img id="horse1" src="./img/horse.gif" alt="">
-        </div>
-        <div class="row row-field">
-            <img id="horse2" src="./img/horse.gif" alt="">
-        </div>
-        <div class="row  row-field">
-            <img id="horse3" src="./img/horse.gif" alt="">
-        </div>
-        <div class="row  row-field">
-            <img id="horse4" src="./img/horse.gif" alt="">
-        </div>
-        <div class="row  row-field">
-            <img id="horse5" src="./img/horse.gif" alt="">
-        </div>
-        <span id="demo">Result</span>
+        <div class="row head">
+            <div class="col-md-4">
+                <button id="start-btn" class="btn btn-primary" onclick="startRun()">Start Run</button>
+            </div>
+            <div class="col-md-8">
+                <h3>Result:</h3>
+                <table>
+                    <tr>
+                        <td class="demo" id="prv"></td>
+                    </tr>
+                    <tr>
+                        <td class="demo" id="vtor"></td>
+                    </tr>
+                    <tr>
+                        <td class="demo" id="tret"></td>
+                    </tr>
+                    <tr>
+                        <td class="demo" id="cetvrt"></td>
+                    </tr>
+                    <tr>
+                        <td class="demo" id="petti"></td>
+                    </tr>
+                </table>
+            </div>
 
-        
+        </div>
+        <div class="row row-field row-odd">
+            <img id="horse1" src="./img/bgbg.gif" alt="">
+        </div>
+        <div class="row row-field row-odd">
+            <img id="horse2" src="./img/sparkRun.gif" alt="">
+        </div>
+        <div class="row  row-field row-odd">
+            <img id="horse3" src="./img/markoRun.gif" alt="">
+        </div>
+        <div class="row  row-field row-odd">
+            <img id="horse4" src="./img/belco.png" alt="">
+        </div>
+        <div class="row  row-field row-odd">
+            <img id="horse5" src="./img/bukefalRun.gif" alt="">
+        </div>
+
+
+
     </div>
 
-    
+
+
 
     <script src="./js/running.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

@@ -1,5 +1,5 @@
 body{
-  background: url(../img/grass.jpg) no-repeat;
+  background: url(../img/bg4.jpg) no-repeat;
   background-size: cover;
 }
 
@@ -10,45 +10,75 @@ body{
     position: relative;
     
   }
-  span{
+
+  h3{
+    /* text-align: center; */
     color: white;
+    background: rgba(241, 213, 122, 0.513);
+    width: 250px;
   }
-  #demo{
+  
+  .demo{
+    /* position: absolute; */
+    margin: 50px auto;
     color:rgb(0, 0, 0);
     height: 50px;
     width: 50px;
+    background: rgba(241, 213, 122, 0.513);
+    border-radius: 10px;
+    padding: 5px 15px;
     /* z-index: 9999; */
+    text-align: center;
+  }
+  .row-even{
+    background-color: rgba(85, 107, 47, 0.363);
+    width: 100%;
+
+  }
+  .row-odd{
+    background: url(../img/fence.png) no-repeat;
   }
  
 .row-field{
-  background: url(../img/bg-row.png) ;
-      background-color: rgb(95, 82, 65);
-      height: 15vh;
-      margin: 10px;
-      padding: 10px;
+  /* background: url(../img/bg-row.png) ; */
+      /* background-color: rgb(95, 82, 65); */
+      height: 13vh;
+      /* margin: 10px; */
+      /* padding: 10px; */
   }
-img{
-    height: 99vh;
-    padding-bottom: 1%;
+  .head{
+    height: 40%;
+  }
+  button #start-btn{
+    position: absolute;
+   text-align: center;
+   margin-left: 20px;
+
+  }
+
+.fense{
+  position: absolute;
+  bottom: 0px;
+  margin-top: 540px;
 }
 #horse1 {
-    height: 20%;
+  height: 13vh;
     position: absolute;
   }
  
 #horse2 {
-    height: 20%;
+  height: 13vh;
     position: absolute;
   }
 #horse3 {
-    height: 20%;
+  height: 13vh;
     position: absolute;
   }
 #horse4 {
-    height: 20%;
+  height: 13vh;
     position: absolute;
   }
 #horse5 {
-    height: 20%;
+  height: 13vh;
     position: absolute;
   }
