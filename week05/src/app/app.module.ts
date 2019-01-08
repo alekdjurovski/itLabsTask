@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SearchComponent } from './search/search.component';
-import { TableComponent } from './table/table.component';
-import { PaginationComponent } from './pagination/pagination.component';
-import { InputFormComponent } from './input-form/input-form.component';
+import { SearchComponent } from './components/search/search.component';
+import { TableComponent } from './components/table/table.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
+import { InputFormComponent } from './components/input-form/input-form.component';
+import { HttpClientModule } from '@angular/common/http';
+import { TableService } from './services/table.service';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,12 @@ import { InputFormComponent } from './input-form/input-form.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    TableService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
