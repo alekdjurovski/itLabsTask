@@ -8,7 +8,7 @@ import { ICustomer } from '../../interface/customer';
   styleUrls: ['./input-form.component.scss']
 })
 export class InputFormComponent implements OnInit {
-  constructor(private tableService: TableService) {}
+  constructor(private _tableService: TableService) {}
 
   customer = {
     name: '',
@@ -37,6 +37,6 @@ export class InputFormComponent implements OnInit {
     this.customer.pin = this.pin;
     this.customer.country = this.country;
 
-    this.tableService.addCustomer(this.customer).subscribe(res => {});
+    this._tableService.addCustomer(this.customer).subscribe(res => {});
   }
 }
