@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "name": "Aleksandar",
+    "address": "11 st. No.37",
+    "city": "Skopje",
+    "pin": "4444",
+    "country": "Macedonia"
+  },
+  {
+    "id": "2",
+    "name": "itLabs",
+    "address": "11 Oktomvri No.25",
+    "city": "Skopje",
+    "pin": "6666",
+    "country": "Macedonia"
+  },
+  {
+    "id": "3",
+    "name": "Djurovski",
+    "address": "11 st. No.37",
+    "city": "Skopje",
+    "pin": "4444",
+    "country": "Macedonia"
+  }
+]
