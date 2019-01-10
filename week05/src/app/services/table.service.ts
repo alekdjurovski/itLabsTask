@@ -9,15 +9,17 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TableService {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
 
-  public customerUrl = '../../assets/data/customers.json';
+  }
+
+  public customerUrl = 'http://localhost:3000/users';
 
   getCustomers(): Observable<ICustomer[]> {
     return this.http.get<ICustomer[]>(this.customerUrl);
   }
 
-  addCustomer() {
-    // return this.http.post<any>(this.customerUrl, customer);
+  addCustomer(customer) {
+    return this.http.post<any>(this.customerUrl, customer);
   }
 }

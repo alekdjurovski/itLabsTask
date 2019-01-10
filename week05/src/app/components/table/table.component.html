@@ -18,7 +18,12 @@
       <td>{{ customer.city }}</td>
       <td>{{ customer.pin }}</td>
       <td>{{ customer.country }}</td>
-      <!-- <td>{{item.}}</td> -->
+      <td>
+        <button class='inline' id='read-btn" + id + "' onclick='read(this)'><i class='fas fa-eye'></i></button>
+        <button class='inline' id='edit-btn" + id + "' onclick='editRow(this)'><i class='fas fa-edit'></i></button>
+        <button id='save-btn" + id + "' class='save' onclick='saveRow(this)'><i class='fas fa-save'></i></button>
+        <button class='inline' id='delete-btn" + id + "'onclick='deleteRow(this)'><i class='fas fa-trash-alt'></i></button>
+      </td>
     </tr>
   </tbody>
 </table>

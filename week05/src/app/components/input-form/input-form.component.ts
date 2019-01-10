@@ -8,21 +8,35 @@ import { ICustomer } from '../../interface/customer';
   styleUrls: ['./input-form.component.scss']
 })
 export class InputFormComponent implements OnInit {
-  customer = {};
+  constructor(private tableService: TableService) {}
 
-  constructor(private tableService: TableService) { }
+  customer = {
+    name: '',
+    address: '',
+    city: '',
+    pin: '',
+    country: ''
+  };
+  name: string;
+  address: any;
+  city: any;
+  pin: any;
+  country: any;
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  onSubmit(userForm: any) {
+    // debugger;
   }
 
   addCustomer() {
-    // this.tableService.addCustomer(this.customer)
-    // .subscribe(
-    //   res => console.log(res),
-    //   err => console.log(err)
-    // );
+    console.log('prv');
+    this.customer.name = this.name;
+    this.customer.address = this.address;
+    this.customer.city = this.city;
+    this.customer.pin = this.pin;
+    this.customer.country = this.country;
 
+    this.tableService.addCustomer(this.customer).subscribe(res => {});
   }
-
-
 }
