@@ -9,6 +9,7 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 import { InputFormComponent } from './components/input-form/input-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TableService } from './services/table.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TableService } from './services/table.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     TableService
