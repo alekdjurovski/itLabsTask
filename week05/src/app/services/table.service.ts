@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ICustomer } from '../interface/customer';
 // import {customers} from '../../assets/data/customers.json';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+// import { HttpClient } from '@angular/common/http';
+// import { Observable } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 
@@ -11,8 +11,9 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class TableService {
   customerData: ICustomer;
-  constructor(private http: HttpClient,
-    private firestore: AngularFirestore) {
+  constructor(private firestore: AngularFirestore,
+    // private http: HttpClient
+    ) {
 
   }
 

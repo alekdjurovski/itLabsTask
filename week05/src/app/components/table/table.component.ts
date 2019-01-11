@@ -12,6 +12,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class TableComponent implements OnInit {
 list: ICustomer[];
 rowData: [];
+searchName: string;
   public customers: any = [];
 
 
@@ -21,7 +22,11 @@ rowData: [];
   ngOnInit() {
     // ova e so json-server
       // this._tableService.getCustomers().subscribe(data => {this.customers = data; });
+      this.showTable();
 
+    }
+
+    showTable() {
       this._tableService.getCustomers().subscribe(res => {
         this.list = res.map(item => {
           return {
@@ -30,6 +35,19 @@ rowData: [];
           } as unknown as ICustomer;
         });
       });
+
+    }
+
+    Search() {
+      if (this.searchName != '') {
+        this.list = this.list.filter(res => {
+          return res.name.toLocaleLowerCase().match(this.searchName.toLocaleLowerCase());
+        });
+
+      } else if (this.searchName == '') {
+        this. ngOnInit();
+      }
+
     }
 
     readRow(name, add, city, pin, country) {

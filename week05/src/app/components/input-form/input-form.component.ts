@@ -27,7 +27,7 @@ export class InputFormComponent implements OnInit {
   // country: any;
 
   constructor(
-    private _tableService: TableService,
+    public _tableService: TableService,
     private firestore: AngularFirestore
   ) {}
 
@@ -36,8 +36,9 @@ export class InputFormComponent implements OnInit {
   }
 
   resetForm(form?: NgForm) {
-    if (form != null)
+    if (form != null) {
     form.resetForm();
+    }
     this._tableService.customerData = {
       id: null,
       name: '',
@@ -45,7 +46,7 @@ export class InputFormComponent implements OnInit {
       city: '',
       pin: null,
       country: ''
-    }
+    };
   }
 
   onSubmit(form: NgForm) {
