@@ -10,32 +10,32 @@ import { AngularFirestore } from '@angular/fire/firestore';
   styleUrls: ['./input-form.component.scss']
 })
 export class InputFormComponent implements OnInit {
+// komenratite se so lokalen json server
+  // customer = {
+  //   id: null,
+  //   name: '',
+  //   address: '',
+  //   city: '',
+  //   pin: '',
+  //   country: ''
+  // };
+  // id: number;
+  // name: string;
+  // address: any;
+  // city: any;
+  // pin: any;
+  // country: any;
+
   constructor(
     private _tableService: TableService,
     private firestore: AngularFirestore
   ) {}
-
-  customer = {
-    id: null,
-    name: '',
-    address: '',
-    city: '',
-    pin: '',
-    country: ''
-  };
-  id: number;
-  name: string;
-  address: any;
-  city: any;
-  pin: any;
-  country: any;
 
   ngOnInit() {
     this.resetForm();
   }
 
   resetForm(form?: NgForm) {
-    // tslint:disable-next-line:curly
     if (form != null)
     form.resetForm();
     this._tableService.customerData = {
@@ -45,13 +45,10 @@ export class InputFormComponent implements OnInit {
       city: '',
       pin: null,
       country: ''
-    // tslint:disable-next-line:semicolon
     }
   }
 
   onSubmit(form: NgForm) {
-    // tslint:disable-next-line:no-debugger
-    // debugger;
     const data = form.value;
     console.log(data);
     this.firestore.collection('customers').add(data);

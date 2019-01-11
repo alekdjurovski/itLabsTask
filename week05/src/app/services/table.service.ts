@@ -16,7 +16,7 @@ export class TableService {
 
   }
 
-// ova dolu e so json- server
+// komentarot dolu e so lokalen json- server
   // public customerUrl = 'http://localhost:3000/users';
 
   // getCustomers(): Observable<ICustomer[]> {

@@ -11,8 +11,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let customer of list; let i of index">
-      <th scope="row">{{ i }}</th>
+    <tr *ngFor="let customer of list | paginate: { itemsPerPage:3, currentPage: page}">
+      <th scope="row">{{ null }}</th>
       <td>{{ customer.name }}</td>
       <td>{{ customer.address }}</td>
       <td>{{ customer.city }}</td>
@@ -28,3 +28,4 @@
   </tbody>
 
 </table>
+<pagination-controls (pageChange)="page = $event"></pagination-controls>
