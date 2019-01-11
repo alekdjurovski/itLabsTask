@@ -11,19 +11,20 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let customer of customers">
-      <th scope="row">{{ customer.id }}</th>
+    <tr *ngFor="let customer of list; let i of index">
+      <th scope="row">{{ i }}</th>
       <td>{{ customer.name }}</td>
       <td>{{ customer.address }}</td>
       <td>{{ customer.city }}</td>
       <td>{{ customer.pin }}</td>
       <td>{{ customer.country }}</td>
       <td>
-        <button class='inline' id='read-btn" + id + "' onclick='read(this)'><i class='fas fa-eye'></i></button>
-        <button class='inline' id='edit-btn" + id + "' onclick='editRow(this)'><i class='fas fa-edit'></i></button>
-        <button id='save-btn" + id + "' class='save' onclick='saveRow(this)'><i class='fas fa-save'></i></button>
-        <button class='inline' id='delete-btn" + id + "'onclick='deleteRow(this)'><i class='fas fa-trash-alt'></i></button>
+        <button class='inline' id='read' (click)='readRow(customer.name)' ><i class='fas fa-eye'></i></button>
+        <button class='inline' id='edit' ><i class='fas fa-edit'></i></button>
+        <button id='save-btn' class='save' ><i class='fas fa-save'></i></button>
+        <button class='inline' id='delete' (click)='deleteRow(customer.id)'><i class='fas fa-trash-alt'></i></button>
       </td>
     </tr>
   </tbody>
+
 </table>
