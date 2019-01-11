@@ -1,13 +1,14 @@
-<form class="container" id="inputForm" name="inputForm">
-  <div class="form-group">
-    <label for="name">Name *{{name}}</label>
+<form class="container" id="inputForm" #f="ngForm" autocomplete="off" name="inputForm" (submit)="onSubmit(f)">
+    <div class="form-group">
+    <label for="name">Name *</label>
     <input
       type="text"
       class="form-control"
       name="name"
+      #name="ngModel"
       id="name"
       placeholder="Enter name"
-      [(ngModel)]="name"
+      [(ngModel)]="_tableService.customerData.name"
     />
   </div>
   <div class="form-group">
@@ -17,8 +18,9 @@
       class="form-control"
       name="address"
       id="address-in"
+      #address="ngModel"
       placeholder="Enter address"
-      [(ngModel)]="address"
+      [(ngModel)]="_tableService.customerData.address"
     />
   </div>
   <div class="form-group">
@@ -28,8 +30,9 @@
       class="form-control"
       id="city-in"
       name="city"
+      #city="ngModel"
       placeholder="Enter city"
-      [(ngModel)]="city"
+      [(ngModel)]="_tableService.customerData.city"
     />
   </div>
   <div class="form-group">
@@ -39,8 +42,9 @@
       class="form-control"
       id="pin-in"
       name="pin"
+      #pin="ngModel"
       placeholder="Enter pin code"
-       [(ngModel)]="pin"
+       [(ngModel)]="_tableService.customerData.pin"
     />
   </div>
   <div class="form-group">
@@ -49,18 +53,17 @@
       type="text"
       class="form-control"
       id="country-in"
-      name="country-in"
+      name="country"
+      #country="ngModel"
       placeholder="Enter country"
-       [(ngModel)]="country"
+       [(ngModel)]="_tableService.customerData.country"
     />
   </div>
   <p>* Required Filed</p>
-  <input
+  <button
     type="submit"
     id="btn-submit"
-    (click)="addCustomer()"
     class="btn btn-success"
-    value="Create"
-  />
+  >Create</button>
   <input class="btn" type="reset" value="Clear Form" />
 </form>

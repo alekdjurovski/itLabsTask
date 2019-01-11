@@ -1,27 +1,38 @@
 import { Injectable } from '@angular/core';
 import { ICustomer } from '../interface/customer';
 // import {customers} from '../../assets/data/customers.json';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+// import { HttpClient } from '@angular/common/http';
+// import { Observable } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class TableService {
-  formData: ICustomer;
-  constructor(private http: HttpClient) {
+  customerData: ICustomer;
+  constructor(private firestore: AngularFirestore,
+    // private http: HttpClient
+    ) {
 
   }
 
-  public customerUrl = 'https://api.jsonbin.io/b/5c37a66205d34b26f206a308';
-  public customerCreateUrl = 'https://api.jsonbin.io/b';
+// komentarot dolu e so lokalen json- server
+  // public customerUrl = 'http://localhost:3000/users';
 
-  getCustomers(): Observable<ICustomer[]> {
-    return this.http.get<ICustomer[]>(this.customerUrl);
+  // getCustomers(): Observable<ICustomer[]> {
+  //   return this.http.get<ICustomer[]>(this.customerUrl);
+  // }
+
+  // addCustomer(customer) {
+  //   return this.http.post<any>(this.customerUrl, customer);
+  // }
+
+  getCustomers() {
+    return this.firestore.collection('customers').snapshotChanges();
+
   }
 
-  addCustomer(customer) {
-    return this.http.post<any>(this.customerCreateUrl, customer);
-  }
+
+
 }

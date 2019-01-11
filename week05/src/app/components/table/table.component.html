@@ -1,4 +1,12 @@
-<table class="table table-striped">
+<nav class="navbar navbar-light bg-light">
+    <h1>Customer Details</h1>
+    <form class="form-inline">
+        <input class="form-control mr-sm-2" type="text" name="search" #search [(ngModel)]="searchName" (input)="Search()" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </nav>
+
+  <table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -11,19 +19,25 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let customer of customers">
-      <th scope="row">{{ customer.id }}</th>
+    <tr *ngFor="let customer of list | paginate: { itemsPerPage:4, currentPage: page}, let i = index">
+      <th scope="row">{{ i + 1  }}</th>
       <td>{{ customer.name }}</td>
       <td>{{ customer.address }}</td>
       <td>{{ customer.city }}</td>
       <td>{{ customer.pin }}</td>
       <td>{{ customer.country }}</td>
       <td>
-        <button class='inline' id='read-btn" + id + "' onclick='read(this)'><i class='fas fa-eye'></i></button>
-        <button class='inline' id='edit-btn" + id + "' onclick='editRow(this)'><i class='fas fa-edit'></i></button>
-        <button id='save-btn" + id + "' class='save' onclick='saveRow(this)'><i class='fas fa-save'></i></button>
-        <button class='inline' id='delete-btn" + id + "'onclick='deleteRow(this)'><i class='fas fa-trash-alt'></i></button>
+        <button class='inline' id='read' (click)='readRow(customer.name, customer.add, customer.city, customer.pin, customer.country)'  ><i class='fas fa-eye'></i></button>
+        <button class='inline' id='edit' ><i class='fas fa-edit'></i></button>
+        <button id='save-btn' class='save' ><i class='fas fa-save'></i></button>
+        <button class='inline' id='delete' (click)='deleteRow(customer.id)'><i class='fas fa-trash-alt'></i></button>
       </td>
     </tr>
   </tbody>
+
+
 </table>
+<pagination-controls (pageChange)="page = $event"></pagination-controls>
+
+
+
