@@ -28,8 +28,8 @@
       <td>{{ customer.country }}</td>
       <td>
         <button class='inline' id='read' (click)='readRow(customer.name, customer.add, customer.city, customer.pin, customer.country)'  ><i class='fas fa-eye'></i></button>
-        <button class='inline' id='edit' ><i class='fas fa-edit'></i></button>
-        <button id='save-btn' class='save' ><i class='fas fa-save'></i></button>
+        <button class='inline' id='edit' (click)='edit(customer)' ><i class='fas fa-edit'></i></button>
+        <!-- <button id='save-btn' class='save' (click)='save(customer)' ><i class='fas fa-save'></i></button> -->
         <button class='inline' id='delete' (click)='deleteRow(customer.id)'><i class='fas fa-trash-alt'></i></button>
       </td>
     </tr>
@@ -37,7 +37,7 @@
 
 
 </table>
-<pagination-controls (pageChange)="page = $event"></pagination-controls>
+<pagination-controls (pageChange)="page = $event" style='float:right'></pagination-controls>
 
 
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TableService } from '../../services/table.service';
-import { ICustomer } from '../../interface/customer';
+// import { ICustomer } from '../../interface/customer';
 import { NgForm } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
 
@@ -10,7 +10,9 @@ import { AngularFirestore } from '@angular/fire/firestore';
   styleUrls: ['./input-form.component.scss']
 })
 export class InputFormComponent implements OnInit {
+
 // komenratite se so lokalen json server
+
   // customer = {
   //   id: null,
   //   name: '',
@@ -54,7 +56,6 @@ export class InputFormComponent implements OnInit {
     console.log(data);
     this.firestore.collection('customers').add(data);
     this.resetForm(form);
-
   }
 
   // addCustomer() {
