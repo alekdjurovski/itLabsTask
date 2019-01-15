@@ -1,0 +1,62 @@
+<div class="col-md-10 right">
+<h1>Categories</h1>
+<form
+  class="container form-inline"
+  id="form"
+  autocomplete="off"
+  name="form"
+  [(ngModel)]="form" #f="ngForm"
+>
+  <div class="form-group">
+    <label for="name">Add new category</label>
+    <input
+      type="text"
+      class="form-control"
+      name="name"
+      [(ngModel)]="name"
+      id="name"
+      placeholder="Enter name of category"
+    />
+    <button type="reset" class="btn btn-success" (click)="addCategory()">
+      Add
+    </button>
+  </div>
+</form>
+<form class="form-inline">
+  <!-- <img [src]="../../../assets/img/xx.gif" alt=""> -->
+  <input
+    class="form-control mr-sm-2"
+    type="text"
+    name="search"
+    placeholder="Search by name"
+    aria-label="Search"
+    [(ngModel)]="name"
+  />
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="search()">
+    Search
+  </button>
+</form>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Parent Category</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of categories;">
+      <th scope="row">{{ item.id }}</th>
+      <td>{{ item.name }}</td>
+      <!-- <td>{{item.parentCategory}}</td> -->
+
+      <td>
+        <button class="inline" id="delete" (click)="removeCategory(item.id)">
+          <i class="fas fa-trash-alt"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>

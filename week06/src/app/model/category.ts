@@ -1,6 +1,6 @@
 export interface ICategories {
   id: number;
   name: string;
-  products: any[];
-  parentCategoryId: number;
+  // products: any[];
+  // parentCategoryId: number;
 }
