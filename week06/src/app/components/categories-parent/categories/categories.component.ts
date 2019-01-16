@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ICategories } from '../../../model/category';
 import { CategoryService } from '../../../services/category.service';
 import { NgForm } from '@angular/forms';
@@ -9,56 +9,81 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./categories.component.scss']
 })
 export class CategoriesComponent implements OnInit {
-  categories: ICategories[];
+  categories: any;
   id: number;
   name: string;
-  form: any;
+  parentCategoryId: number;
+  searchName: string;
+  showSearch = false;
+  editName: any;
+  inName: string;
+
   category: any = {
     // id: null,
-    name: '',
+    name: ''
     // products: [],
     // parentCategoryId: null
-};
+  };
+  oldName: any;
+  editRow: ICategories;
 
-
-  constructor(private _service: CategoryService) { }
+  constructor(private _service: CategoryService) {}
 
   ngOnInit() {
     this.getCategories();
-
   }
 
   getCategories() {
-    this._service.getCategories().subscribe(data => {console.log(data);
-    this.categories = data;
+    this._service.getCategories().subscribe(data => {
+      console.log(data);
+      this.categories = data;
     });
-
   }
 
   addCategory() {
-    this.category.name = this.name;
-    this._service.addCategories(this.category).subscribe(
-      res => {console.log(res); this.getCategories(); });
+    this.category.name = this.inName;
+    this._service.addCategories(this.category).subscribe(res => {
+      console.log(res);
+      this.getCategories();
+    });
+  }
+
+  search() {
+    if (this.searchName) {
+      this.showSearch = true;
+      this._service.searchCategories(this.searchName).subscribe(res => {
+        return (this.categories = res);
+      });
+    } else {
+      this.resetSearch();
     }
+  }
 
-    search() {
-      this._service.searchCategories(this.name).subscribe(
-        res => {
-          this.category = res;
-        }
-      );
-
+  resetSearch() {
+    if (this.searchName === '') {
+      this.getCategories();
     }
+  }
+  clearSearch() {
+    this.searchName = '';
+    this.resetSearch();
+    this.showSearch = false;
+  }
 
-  removeCategory(id) {
-
-    this._service.deleteCategories(id)
-    .subscribe(
-      res => {
-      this.getCategories(); }
-    );
-
+  editCategory(name) {
+    this.inName = name;
+    this._service.categoryData = item;
 
   }
 
+  saveCategory() {
+    this._service.editCategories(item, id).subscribe();
+  }
+
+  removeCategory(id) {
+    // debugger;
+    this._service.deleteCategories(id).subscribe(res => {
+      this.getCategories();
+    });
+  }
 }
