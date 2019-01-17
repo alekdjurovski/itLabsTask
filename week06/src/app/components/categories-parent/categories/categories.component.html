@@ -14,7 +14,22 @@
       <button type="reset" class="btn btn-success" (click)="addCategory()">
         Add
       </button>
-      <button type="reset" class="btn btn-success" (click)=" saveCategory()">
+
+    </div>
+  </form>
+  <form class="container form-inline" id="form" autocomplete="off" name="form">
+    <div class="form-group">
+      <label for="name">Edit category</label>
+      <input
+        type="text"
+        class="form-control"
+        name="editName"
+        [(ngModel)]="editName"
+        id="name"
+        placeholder="Enter name of category"
+      />
+
+      <button type="reset" class="btn btn-success" (click)="saveCategory()">
           Save
         </button>
     </div>
@@ -58,7 +73,7 @@
         <td>{{ item.parentCategoryId }}</td>
 
         <td>
-          <button class="inline" id="edit" (click)="editCategory(item.name, item.id)">
+          <button class="inline" id="edit" (click)="editCategory(item.id, item.name)">
             <i class="fas fa-edit"></i>
           </button>
           <button class="inline" id="delete" (click)="removeCategory(item.id)">

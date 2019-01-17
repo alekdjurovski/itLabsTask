@@ -16,6 +16,7 @@ export class CategoriesComponent implements OnInit {
   searchName: string;
   showSearch = false;
   editName: any;
+  editId: number;
   inName: string;
 
   category: any = {
@@ -70,19 +71,20 @@ export class CategoriesComponent implements OnInit {
     this.showSearch = false;
   }
 
-  editCategory(name) {
-    this.inName = name;
-    this._service.categoryData = item;
-
+  editCategory(id, name: ICategories[]) {
+    this.editName = name;
+    this.editId = id;
+    this._service.categoryData = name;
   }
 
   saveCategory() {
-    this._service.editCategories(item, id).subscribe();
+  this.category.name = this.editName;
+  this.category.id = this.editId;
+  this._service.editCategories(this.category.id, this.category).subscribe(data => {this.getCategories(); }  );
   }
 
-  removeCategory(id) {
-    // debugger;
-    this._service.deleteCategories(id).subscribe(res => {
+  removeCategory(id: any) {
+      this._service.deleteCategories(id).subscribe(res => {
       this.getCategories();
     });
   }
