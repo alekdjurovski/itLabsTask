@@ -23,7 +23,6 @@ export class CategoryService {
   }
 
   editCategories(id, category) {
-    debugger;
     return this.http.put<any>(this.getPostUrl + '/' + id, category);
 }
 
