@@ -1,12 +1,12 @@
- <div class="col-lg-3 col-md-3 col-sm-3 bg-body">
+<div class="col-lg-3 col-md-3 col-sm-3 bg-body">
   <app-sidebar></app-sidebar>
 </div>
 
-<div class="col-lg-9 col-md-8 col-sm-7 right mr-3 mt-5">
+<div class="col-lg-9 col-md-8 col-sm-7 right mr-3 mt-3 ">
   <h1 class="mt-2 mb-4">Categories</h1>
-  <form class="container form-inline mb-5" id="form" name="form">
-    <div class="form-group">
-      <label for="name">Add new category</label>
+  <form *ngIf="!hideForm" class="container mb-2" id="form" name="form">
+    <label for="name" class="ml-1">Add new category</label>
+    <div class="form-group form-inline">
       <input
         type="text"
         class="form-control"
@@ -18,12 +18,17 @@
       <button type="reset" class="btn btn-style" (click)="addCategory()">
         Add
       </button>
-
     </div>
   </form>
-  <form *ngIf="hideForm" class="container form-inline" id="form" autocomplete="off" name="form">
-    <div class="form-group">
-      <label for="name">Edit category</label>
+  <form
+    *ngIf="hideForm"
+    class="container"
+    id="form"
+    autocomplete="off"
+    name="form"
+  >
+    <label for="editName" class="ml-1">Edit category</label>
+    <div class="form-group form-inline">
       <input
         type="text"
         class="form-control"
@@ -34,11 +39,11 @@
       />
 
       <button type="reset" class="btn btn-style" (click)="saveCategory()">
-          Save
-        </button>
+        Save
+      </button>
     </div>
   </form>
-  <form class="form-inline">
+  <form class="form-inline d-flex flex-row-reverse">
     <input
       class="form-control mr-sm-2"
       type="search"
@@ -48,22 +53,14 @@
       [(ngModel)]="searchName"
       (input)="resetSearch()"
     />
-    <i
-      *ngIf="showSearch"
-      class="far fa-times-circle"
-      (click)="clearSearch()"
-    ></i>
-    <button
-      class="btn btn-outline-success btn-style my-2 my-sm-0"
-      type="submit"
-      (click)="search()"
-    >
+    <i *ngIf="showSearch" class="fas fa-times-circle" (click)="clearSearch()"></i>
+    <button class="btn btn-dark my-2 my-sm-0 mr-1" type="submit" (click)="search()">
       Search
     </button>
   </form>
   <table class="table table-striped">
     <thead>
-      <tr>
+      <tr class="head-row">
         <!-- <th scope="col">#</th> -->
         <th scope="col">Name</th>
         <th scope="col">Parent Category</th>
@@ -77,13 +74,16 @@
         <td>{{ item.parentCategoryId }}</td>
 
         <td>
-          <button class="inline" id="edit" (click)="editCategory(item.id, item.name)">
+          <button
+            class=" btn-dark mr-2"
+            id="edit"
+            (click)="editCategory(item.id, item.name)"
+          >
             <i class="fas fa-edit"></i>
           </button>
-          <button class="inline" id="delete" (click)="removeCategory(item.id)">
+          <button class="inline btn-dark" id="delete" (click)="removeCategory(item.id)">
             <i class="fas fa-trash-alt"></i>
           </button>
-
         </td>
       </tr>
     </tbody>

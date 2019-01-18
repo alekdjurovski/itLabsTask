@@ -1,10 +1,7 @@
-$primary-color:#AF7A6D;
-$secondary-color: rgb(136, 130, 246);
-$dark-text: rgb(49, 47, 95);
-$light-text: #F7F7FF;
+@import '../../../styles.scss';
 
 .btn-start{
-  background-color: $primary-color;
+  background-color: $secondary-color;
   color: $light-text;
   font-size: 20px;
   font-weight: 800;
@@ -13,9 +10,9 @@ $light-text: #F7F7FF;
   box-shadow: 8px 1px 23px darken($primary-color, 10);
 
   &:hover{
-    background-color: lighten($primary-color, 6) ;
-    transition: 0.5s;
-    font-size: 1.3em;
+    background-color: lighten($secondary-color, 6) ;
+    transition: 0.3s;
+    font-size: 1.1em;
   }
 
 }
