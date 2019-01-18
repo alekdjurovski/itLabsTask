@@ -1,12 +1,12 @@
-import { Component, OnInit, Input } from "@angular/core";
-import { ICategories } from "../../../model/category";
-import { CategoryService } from "../../../services/category.service";
+import { Component, OnInit, Input } from '@angular/core';
+import { ICategories } from '../../../model/category';
+import { CategoryService } from '../../../services/category.service';
 // import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: "app-categories",
-  templateUrl: "./categories.component.html",
-  styleUrls: ["./categories.component.scss"]
+  selector: 'app-categories',
+  templateUrl: './categories.component.html',
+  styleUrls: ['./categories.component.scss']
 })
 export class CategoriesComponent implements OnInit {
   categories: any;
@@ -22,7 +22,7 @@ export class CategoriesComponent implements OnInit {
 
   category: any = {
     // id: null,
-    name: ""
+    name: ''
     // products: [],
     // parentCategoryId: null
   };
@@ -62,12 +62,12 @@ export class CategoriesComponent implements OnInit {
   }
 
   resetSearch() {
-    if (this.searchName === "") {
+    if (this.searchName === '') {
       this.getCategories();
     }
   }
   clearSearch() {
-    this.searchName = "";
+    this.searchName = '';
     this.resetSearch();
     this.showSearch = false;
   }
