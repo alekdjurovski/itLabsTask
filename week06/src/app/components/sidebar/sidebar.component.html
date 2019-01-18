@@ -1,25 +1,18 @@
 <div class="row">
   <div class="col-md-3 left">
-    <ul class="nav flex-column nav-tabs sidebar">
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          routerLink="/categories"
-          routerLinkActive="router-link-active"
-          >Categories</a
-        >
+    <ul class="navbar-nav flex-column nav-tabs sidebar">
+      <li class="nav-item" routerLink="/categories" routerLinkActive="active">
+        <a class="nav-link">Categories<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          [routerLink]="['/products']"
-          routerLinkActive="router-link-active"
-          >Products</a
-        >
+      <li
+        class="nav-item"
+        [routerLink]="['/products']"
+        routerLinkActive="active"
+      >
+        <a class="nav-link">Products</a>
       </li>
     </ul>
   </div>
-</div>
 
-  <div class="col-md-9">
-  </div>
+  <div class="col-md-9"></div>
+</div>

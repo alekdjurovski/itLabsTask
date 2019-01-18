@@ -1,11 +1,10 @@
-// .sidebar {
-//   width: inherit;
-//   min-width: 200px;
-//   max-width: 200px;
-//   background-color:#4d54c2;
-//   float: left;
-//   height:100vh;
-//   position:relative;
-//   overflow-y:auto;
-//   overflow-x:hidden;
-// }
+$primary-color:rgb(13, 199, 146);
+$secondary-color: rgb(136, 130, 246);
+$dark-text: rgb(49, 47, 95);
+
+nav{
+background-color: $primary-color;
+color: $dark-text;
+height: 80px;
+box-shadow: 8px 1px 23px darken($primary-color, 10);
+}

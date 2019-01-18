@@ -1,12 +1,12 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ICategories } from '../../../model/category';
-import { CategoryService } from '../../../services/category.service';
+import { Component, OnInit, Input } from "@angular/core";
+import { ICategories } from "../../../model/category";
+import { CategoryService } from "../../../services/category.service";
 // import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-categories',
-  templateUrl: './categories.component.html',
-  styleUrls: ['./categories.component.scss']
+  selector: "app-categories",
+  templateUrl: "./categories.component.html",
+  styleUrls: ["./categories.component.scss"]
 })
 export class CategoriesComponent implements OnInit {
   categories: any;
@@ -15,13 +15,14 @@ export class CategoriesComponent implements OnInit {
   parentCategoryId: number;
   searchName: string;
   showSearch = false;
+  hideForm = false;
   editName: any;
   editId: number;
   inName: string;
 
   category: any = {
     // id: null,
-    name: ''
+    name: ""
     // products: [],
     // parentCategoryId: null
   };
@@ -61,30 +62,36 @@ export class CategoriesComponent implements OnInit {
   }
 
   resetSearch() {
-    if (this.searchName === '') {
+    if (this.searchName === "") {
       this.getCategories();
     }
   }
   clearSearch() {
-    this.searchName = '';
+    this.searchName = "";
     this.resetSearch();
     this.showSearch = false;
   }
 
   editCategory(id, name: ICategories[]) {
+    this.hideForm = true;
     this.editName = name;
     this.editId = id;
     this._service.categoryData = name;
   }
 
   saveCategory() {
-  this.category.name = this.editName;
-  this.category.id = this.editId;
-  this._service.editCategories(this.category.id, this.category).subscribe(data => {this.getCategories(); }  );
+    this.hideForm = false;
+    this.category.name = this.editName;
+    this.category.id = this.editId;
+    this._service
+      .editCategories(this.category.id, this.category)
+      .subscribe(data => {
+        this.getCategories();
+      });
   }
 
   removeCategory(id: any) {
-      this._service.deleteCategories(id).subscribe(res => {
+    this._service.deleteCategories(id).subscribe(res => {
       this.getCategories();
     });
   }
