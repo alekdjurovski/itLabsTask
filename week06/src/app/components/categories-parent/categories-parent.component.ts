@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./categories-parent.component.scss']
 })
 export class CategoriesParentComponent implements OnInit {
-
+showBtn = true;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  hide() {
+this.showBtn = !this.showBtn;
   }
 
 }

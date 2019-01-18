@@ -1,23 +1,22 @@
-  <!-- <div class="col-md-2 left">
-    <ul class="nav flex-column nav-tabs sidebar">
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          routerLink="categories"
-          routerLinkActive="router-link-active"
-          >Categories</a
-        >
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          [routerLink]="['/products']"
-          routerLinkActive="router-link-active"
-          >Products</a
-        >
-      </li>
-    </ul>
-  </div>
+<div class="row">
+    <div class="col-md-2">
+        <!-- <app-sidebar></app-sidebar> -->
 
-  <div class="col-md-10">
-  </div> -->
+    </div>
+    <div class="col-md-3">
+        <!-- <app-categories-parent></app-categories-parent> -->
+  <button class="btn btn-primary" [routerLink]="['/categories']" routerLinkActive="router-link-active" (click)="hide()" >Category</button>
+    </div>
+    <div class="col-md-2">
+        <!-- <app-sidebar></app-sidebar> -->
+
+    </div>
+    <div class="col-md-3">
+        <!-- <app-sidebar></app-sidebar> -->
+        <button class="btn btn-primary" [routerLink]="['/products']" routerLinkActive="router-link-active" (click)="hide()" >Products</button>
+    </div>
+    <div class="col-md-2">
+        <!-- <app-sidebar></app-sidebar> -->
+
+    </div>
+  </div>

@@ -35,5 +35,4 @@ export class CategoryService {
     return this.http.delete(this.deleteCategoryUrl + id);
   }
 
-
 }
