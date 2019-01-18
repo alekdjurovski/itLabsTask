@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ICategories } from '../../../model/category';
 import { CategoryService } from '../../../services/category.service';
 // import { NgForm } from '@angular/forms';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { PopUpService } from '../../../services/pop-up.service';
 
 @Component({
   selector: 'app-categories',
@@ -29,7 +31,8 @@ export class CategoriesComponent implements OnInit {
   oldName: any;
   editRow: ICategories;
 
-  constructor(private _service: CategoryService) {}
+  constructor(private _service: CategoryService,
+              private _popupService: PopUpService) {}
 
   ngOnInit() {
     this.getCategories();
@@ -90,9 +93,13 @@ export class CategoriesComponent implements OnInit {
       });
   }
 
-  removeCategory(id: any) {
+  removeCategory(id) {
+    if (confirm('Are you sure you want to perform this action?')) {
     this._service.deleteCategories(id).subscribe(res => {
       this.getCategories();
     });
   }
+  // this._popupService.deleteAlert();
+}
+
 }

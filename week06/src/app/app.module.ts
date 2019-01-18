@@ -11,6 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CategoriesParentComponent } from './components/categories-parent/categories-parent.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { PopUpComponent } from './components/pop-up/pop-up.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,17 +22,21 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     ProductsComponent,
     CategoriesComponent,
     CategoriesParentComponent,
-    SidebarComponent
+    SidebarComponent,
+    PopUpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
+    BrowserAnimationsModule
   ],
   providers: [
     CategoryService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [CategoriesComponent, PopUpComponent]
 })
 export class AppModule { }

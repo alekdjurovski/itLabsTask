@@ -1,3 +1,5 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 $primary-color:rgb(126, 121, 234);
 $background-color:rgb(213, 217, 228);
 
@@ -9,3 +11,6 @@ body{
 
 
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

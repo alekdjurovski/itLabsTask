@@ -1,9 +1,15 @@
 $primary-color:rgb(13, 199, 146);
 $secondary-color: rgb(136, 130, 246);
 $dark-text: rgb(49, 47, 95);
+$light-text: #F7F7FF;
 
 .right{
   float: right;
   width: 100%;
 }
 
+.btn-style{
+  background-color: #6F9283;
+  color: $light-text;
+  border: 1px solid #AF7A6D;
+}
