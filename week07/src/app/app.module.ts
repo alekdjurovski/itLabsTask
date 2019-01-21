@@ -4,13 +4,15 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { ProductsComponent } from './components/categories-parent/products/products.component';
-import { CategoriesComponent } from './components/categories-parent/categories/categories.component';
+import { ProductsComponent } from './components/main/products/products.component';
+import { CategoriesComponent } from './components/main/categories/categories.component';
 import { CategoryService } from './services/category.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { CategoriesParentComponent } from './components/categories-parent/categories-parent.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { MainComponent } from './components/main/main.component';
+import { AddNewComponent } from './components/main/add-new/add-new.component';
+import { EditComponent } from './components/main/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +20,10 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     HeaderComponent,
     ProductsComponent,
     CategoriesComponent,
-    CategoriesParentComponent,
-    SidebarComponent
+    SidebarComponent,
+    MainComponent,
+    AddNewComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
