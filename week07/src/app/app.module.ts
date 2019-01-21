@@ -13,6 +13,9 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MainComponent } from './components/main/main.component';
 import { AddNewComponent } from './components/main/add-new/add-new.component';
 import { EditComponent } from './components/main/edit/edit.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatSelectModule, MatInputModule } from '@angular/material';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +32,13 @@ import { EditComponent } from './components/main/edit/edit.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatCheckboxModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule
   ],
   providers: [
     CategoryService

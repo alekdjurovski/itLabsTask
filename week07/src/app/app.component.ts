@@ -12,6 +12,6 @@ export class AppComponent {
 
   // tslint:disable-next-line:use-life-cycle-interface
   ngOnInit() {
-    this.router.navigate(['']);
+    // this.router.navigate(['']);
   }
 }

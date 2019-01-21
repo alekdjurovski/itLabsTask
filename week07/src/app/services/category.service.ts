@@ -22,7 +22,13 @@ export class CategoryService {
       return this.http.post<any>(this.getPostUrl, category);
   }
 
+  getOneCategory(id): Observable<any> {
+    debugger;
+    return this.http.get<ICategories[]>(this.getPostUrl + '/' + id);
+  }
+
   editCategories(id, category) {
+    debugger;
     return this.http.put<any>(this.getPostUrl + '/' + id, category);
 }
 

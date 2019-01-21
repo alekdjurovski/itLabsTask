@@ -4,23 +4,19 @@
 
 <div class="col-lg-9 col-md-8 col-sm-7 right mr-3 mt-3 ">
   <h1 class="mt-2 mb-4">Categories</h1>
-  <form *ngIf="!hideForm" class="container mb-2" id="form" name="form">
-    <label for="name" class="ml-1">Add new category</label>
-    <div class="form-group form-inline">
-      <input
-        type="text"
-        class="form-control"
-        name="name"
-        [(ngModel)]="inName"
-        id="name"
-        placeholder="Enter name of category"
-      />
-      <button type="reset" class="btn btn-style" (click)="addCategory()">
-        Add
-      </button>
-    </div>
-  </form>
-  <form
+  <div class="form-group form-inline">
+    <p class="ml-3">Add new category</p>
+    <button
+      type="reset"
+      class="btn btn-style ml-5"
+      [routerLink]="['/add']"
+      routerLinkActive="router-link-active"
+    >
+      Add New
+    </button>
+  </div>
+
+  <!-- <form
     *ngIf="hideForm"
     class="container"
     id="form"
@@ -42,7 +38,9 @@
         Save
       </button>
     </div>
-  </form>
+  </form> -->
+
+
   <form class="form-inline d-flex flex-row-reverse">
     <input
       class="form-control mr-sm-2"
@@ -53,8 +51,16 @@
       [(ngModel)]="searchName"
       (input)="resetSearch()"
     />
-    <i *ngIf="showSearch" class="fas fa-times-circle" (click)="clearSearch()"></i>
-    <button class="btn btn-dark my-2 my-sm-0 mr-1" type="submit" (click)="search()">
+    <i
+      *ngIf="showSearch"
+      class="fas fa-times-circle"
+      (click)="clearSearch()"
+    ></i>
+    <button
+      class="btn btn-dark my-2 my-sm-0 mr-1"
+      type="submit"
+      (click)="search()"
+    >
       Search
     </button>
   </form>
@@ -77,11 +83,18 @@
           <button
             class=" btn-dark mr-2"
             id="edit"
-            (click)="editCategory(item.id, item.name)"
+            (click)="editCategory(item.id)"
+            [routerLink]="['/edit']"
+             routerLinkActive="router-link-active"
+
           >
             <i class="fas fa-edit"></i>
           </button>
-          <button class="inline btn-dark" id="delete" (click)="removeCategory(item.id)">
+          <button
+            class="inline btn-dark"
+            id="delete"
+            (click)="removeCategory(item.id)"
+          >
             <i class="fas fa-trash-alt"></i>
           </button>
         </td>

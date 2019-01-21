@@ -19,7 +19,6 @@ export class CategoriesComponent implements OnInit {
   editName: any;
   editId: number;
   inName: string;
-
   category: any = {
     // id: null,
     name: ''
@@ -28,6 +27,7 @@ export class CategoriesComponent implements OnInit {
   };
   oldName: any;
   editRow: ICategories;
+  parentId: number;
 
   constructor(private _service: CategoryService) {}
 
@@ -39,14 +39,6 @@ export class CategoriesComponent implements OnInit {
     this._service.getCategories().subscribe(data => {
       console.log(data);
       this.categories = data;
-    });
-  }
-
-  addCategory() {
-    this.category.name = this.inName;
-    this._service.addCategories(this.category).subscribe(res => {
-      console.log(res);
-      this.getCategories();
     });
   }
 
@@ -66,29 +58,31 @@ export class CategoriesComponent implements OnInit {
       this.getCategories();
     }
   }
+
   clearSearch() {
     this.searchName = '';
     this.resetSearch();
     this.showSearch = false;
   }
 
-  editCategory(id, name: ICategories[]) {
-    this.hideForm = true;
-    this.editName = name;
+  editCategory(id) {  debugger;
     this.editId = id;
-    this._service.categoryData = name;
+    this._service.getOneCategory(this.editId).subscribe(res => {
+
+      console.log(res);
+    });
   }
 
-  saveCategory() {
-    this.hideForm = false;
-    this.category.name = this.editName;
-    this.category.id = this.editId;
-    this._service
-      .editCategories(this.category.id, this.category)
-      .subscribe(data => {
-        this.getCategories();
-      });
-  }
+  // saveCategory() {
+  //   this.hideForm = false;
+  //   this.category.name = this.editName;
+  //   this.category.id = this.editId;
+  //   this._service
+  //     .editCategories(this.category.id, this.category)
+  //     .subscribe(data => {
+  //       this.getCategories();
+  //     });
+  // }
 
   removeCategory(id) {
     if (confirm('Are you sure you want to perform this action?')) {
