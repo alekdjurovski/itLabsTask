@@ -23,18 +23,26 @@ export class EditComponent implements OnInit {
   constructor(private _service: CategoryService) { }
 
   ngOnInit() {
-    this.getCategory(this.id);
+    this.editCategory();
   }
 
-  getCategory(id) {
-   return this._service.getOneCategory(id).subscribe(data => {console.log(data); });
-  }
+  // getCategory(id) {
+  //  return this._service.getOneCategory().subscribe(data => {console.log(data); });
+  // }
 
-  editCategory(id, name: ICategories[]) {
-    this.editName = name;
-    this.editId = id;
-    this._service.categoryData = name;
-  }
+  editCategory() {
+   this.editId = this.id;
+   this._service.getOneCategory().subscribe(res => {
+   this._service.categoryData = res;
+     console.log(res);
+   });
+ }
+
+  // editCategory(id, name: ICategories[]) {
+  //   this.editName = name;
+  //   this.editId = id;
+  //   this._service.categoryData = name;
+  // }
 
   saveCategory() {
     this.category.name = this.editName;

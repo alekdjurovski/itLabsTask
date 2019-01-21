@@ -11,6 +11,7 @@ export class CategoryService {
   public deleteCategoryUrl = 'http://127.0.0.1:3000/categories/';
   public searchUrl = 'http://127.0.0.1:3000/categories?filter[where][name][eq]=';
   categoryData: ICategories[];
+  editId: number;
 
   constructor(private http: HttpClient) { }
 
@@ -22,8 +23,9 @@ export class CategoryService {
       return this.http.post<any>(this.getPostUrl, category);
   }
 
-  getOneCategory(id): Observable<any> {
-    return this.http.get<any>(this.getPostUrl + '/' + id);
+  getOneCategory(): Observable<any> {
+    return this.http.get<any>(this.getPostUrl + '/' + this.editId);
+
   }
 
   editCategories(id, category) {

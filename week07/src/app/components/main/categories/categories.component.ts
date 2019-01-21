@@ -65,12 +65,12 @@ export class CategoriesComponent implements OnInit {
     this.showSearch = false;
   }
 
-  editCategory(id) {  debugger;
-    this.editId = id;
-    this._service.getOneCategory(this.editId).subscribe(res => {
-
-      console.log(res);
-    });
+  editCategory(id) {
+    this._service.editId = id;
+//     this._service.getOneCategory().subscribe(res => {
+// this._service.categoryData = res;
+//       console.log(res);
+//     });
   }
 
   // saveCategory() {
