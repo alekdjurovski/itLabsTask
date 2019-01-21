@@ -23,12 +23,10 @@ export class CategoryService {
   }
 
   getOneCategory(id): Observable<any> {
-    debugger;
-    return this.http.get<ICategories[]>(this.getPostUrl + '/' + id);
+    return this.http.get<any>(this.getPostUrl + '/' + id);
   }
 
   editCategories(id, category) {
-    debugger;
     return this.http.put<any>(this.getPostUrl + '/' + id, category);
 }
 

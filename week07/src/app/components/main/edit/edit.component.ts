@@ -27,7 +27,6 @@ export class EditComponent implements OnInit {
   }
 
   getCategory(id) {
-    debugger;
    return this._service.getOneCategory(id).subscribe(data => {console.log(data); });
   }
 
