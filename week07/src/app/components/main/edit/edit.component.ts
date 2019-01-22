@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from 'src/app/services/category.service';
 import { ICategories } from '../../../model/category';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit',
@@ -10,8 +11,9 @@ import { ICategories } from '../../../model/category';
 export class EditComponent implements OnInit {
   btnEnable = false;
   name: number;
-  editName: any;
+  ngName: any;
   editId: number;
+  editName: string;
   id: number;
   category: any = {
     // id: null,
@@ -20,39 +22,29 @@ export class EditComponent implements OnInit {
     // parentCategoryId: null
   };
   inName: string;
-  constructor(private _service: CategoryService) { }
+
+  constructor(private _service: CategoryService,
+              private router: Router) {}
 
   ngOnInit() {
     this.editCategory();
   }
 
-  // getCategory(id) {
-  //  return this._service.getOneCategory().subscribe(data => {console.log(data); });
-  // }
-
   editCategory() {
-   this.editId = this.id;
-   this._service.getOneCategory().subscribe(res => {
-   this._service.categoryData = res;
-     console.log(res);
-   });
- }
-
-  // editCategory(id, name: ICategories[]) {
-  //   this.editName = name;
-  //   this.editId = id;
-  //   this._service.categoryData = name;
-  // }
-
-  saveCategory() {
-    this.category.name = this.editName;
-    this.category.id = this.editId;
-    this._service
-      .editCategories(this.category.id, this.category)
-      .subscribe(data => {
-        this._service.getCategories();
-      });
+    this._service.getOneCategory().subscribe(res => {
+      this.category = res;
+      console.log(this.category);
+      this.ngName = this.category.name;
+    });
   }
 
+  saveCategory() {
+    this.category.name = this.ngName;
+    this._service
+      .editCategories(this.category.id, this.category).subscribe(res => {
+        this._service.getCategories();
+        this.router.navigate(['/categories']);
+      });
 
+  }
 }

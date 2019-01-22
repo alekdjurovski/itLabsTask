@@ -5,7 +5,7 @@
       <mat-form-field>
         <input
           matInput
-          [(ngModel)]="inName"
+          [(ngModel)]="ngName"
           placeholder="Enter name of category"
           (input)="(btnEnable)"
           required
@@ -26,9 +26,7 @@
         <button
           type="reset"
           class="btn btn-style ml-5"
-          (click)="editCategory()"
-          [routerLink]="['/categories']"
-          routerLinkActive="router-link-active"
+          (click)="saveCategory()"
         >
           Save
         </button>

@@ -10,8 +10,12 @@ export class CategoryService {
   public getPostUrl = 'http://127.0.0.1:3000/categories';
   public deleteCategoryUrl = 'http://127.0.0.1:3000/categories/';
   public searchUrl = 'http://127.0.0.1:3000/categories?filter[where][name][eq]=';
-  categoryData: ICategories[];
+  categoryData = {
+    name : '',
+  };
   editId: number;
+  oldName = this.categoryData.name;
+
 
   constructor(private http: HttpClient) { }
 

@@ -3,4 +3,5 @@ export interface ICategories {
   name: string;
   // products: any[];
   // parentCategoryId: number;
+
 }

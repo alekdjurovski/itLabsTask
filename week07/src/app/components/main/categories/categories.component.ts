@@ -29,7 +29,9 @@ export class CategoriesComponent implements OnInit {
   editRow: ICategories;
   parentId: number;
 
-  constructor(private _service: CategoryService) {}
+  constructor(private _service: CategoryService) {
+
+  }
 
   ngOnInit() {
     this.getCategories();
@@ -37,7 +39,6 @@ export class CategoriesComponent implements OnInit {
 
   getCategories() {
     this._service.getCategories().subscribe(data => {
-      console.log(data);
       this.categories = data;
     });
   }
@@ -67,22 +68,7 @@ export class CategoriesComponent implements OnInit {
 
   editCategory(id) {
     this._service.editId = id;
-//     this._service.getOneCategory().subscribe(res => {
-// this._service.categoryData = res;
-//       console.log(res);
-//     });
   }
-
-  // saveCategory() {
-  //   this.hideForm = false;
-  //   this.category.name = this.editName;
-  //   this.category.id = this.editId;
-  //   this._service
-  //     .editCategories(this.category.id, this.category)
-  //     .subscribe(data => {
-  //       this.getCategories();
-  //     });
-  // }
 
   removeCategory(id) {
     if (confirm('Are you sure you want to perform this action?')) {

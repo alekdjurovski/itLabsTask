@@ -16,16 +16,13 @@ export class AddNewComponent implements OnInit {
   };
   inName: string;
 
+  constructor(private _service: CategoryService) {}
 
-  constructor(private _service: CategoryService) { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   addCategory() {
     this.category.name = this.inName;
     this._service.addCategories(this.category).subscribe(res => {
-      console.log(res);
       this._service.getCategories();
     });
   }
