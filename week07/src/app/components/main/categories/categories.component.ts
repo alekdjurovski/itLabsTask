@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ICategories } from '../../../model/category';
 import { CategoryService } from '../../../services/category.service';
+import { ToasterService } from 'src/app/services/toaster/toaster.service';
+import { IToast } from '../../../model/toaster';
 
 @Component({
   selector: 'app-categories',
@@ -28,7 +30,8 @@ export class CategoriesComponent implements OnInit {
   editRow: ICategories;
   parentId: number;
 
-  constructor(private _service: CategoryService) {}
+  constructor(private _service: CategoryService,
+              private toastService: ToasterService) {}
 
   ngOnInit() {
     this.getCategories();
@@ -76,4 +79,9 @@ export class CategoriesComponent implements OnInit {
       });
     }
   }
+
+  success() {
+    this.toastService.success('Success!');
+   }
+
 }

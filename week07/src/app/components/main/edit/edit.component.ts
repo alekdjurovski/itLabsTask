@@ -25,6 +25,8 @@ export class EditComponent implements OnInit {
   ngDesc: string;
   ngParentId: string;
 
+  nameParent: string;
+
   constructor(private _service: CategoryService, private router: Router) {}
 
   ngOnInit() {

@@ -15,6 +15,7 @@ import { AddNewComponent } from './components/main/add-new/add-new.component';
 import { EditComponent } from './components/main/edit/edit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatSelectModule, MatInputModule } from '@angular/material';
+import { ToasterService } from './services/toaster/toaster.service';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatSelectModule
     MatInputModule
   ],
   providers: [
-    CategoryService
+    CategoryService,
+    ToasterService
   ],
   bootstrap: [AppComponent]
 })
