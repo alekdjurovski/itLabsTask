@@ -15,32 +15,6 @@
       Add New
     </button>
   </div>
-
-  <!-- <form
-    *ngIf="hideForm"
-    class="container"
-    id="form"
-    autocomplete="off"
-    name="form"
-  >
-    <label for="editName" class="ml-1">Edit category</label>
-    <div class="form-group form-inline">
-      <input
-        type="text"
-        class="form-control"
-        name="editName"
-        [(ngModel)]="editName"
-        id="name"
-        placeholder="Enter name of category"
-      />
-
-      <button type="reset" class="btn btn-style" (click)="saveCategory()">
-        Save
-      </button>
-    </div>
-  </form> -->
-
-
   <form class="form-inline d-flex flex-row-reverse">
     <input
       class="form-control mr-sm-2"
@@ -67,7 +41,7 @@
   <table class="table table-striped">
     <thead>
       <tr class="head-row">
-        <!-- <th scope="col">#</th> -->
+        <th scope="col">#</th>
         <th scope="col">Name</th>
         <th scope="col">Parent Category</th>
         <th scope="col">Action</th>
@@ -75,7 +49,7 @@
     </thead>
     <tbody class="">
       <tr *ngFor="let item of categories">
-        <!-- <th scope="row">{{ item.id }}</th> -->
+        <th scope="row">{{ item.id }}</th>
         <td>{{ item.name }}</td>
         <td>{{ item.parentCategoryId }}</td>
 
@@ -85,8 +59,7 @@
             id="edit"
             (click)="editCategory(item.id)"
             [routerLink]="['/edit']"
-             routerLinkActive="router-link-active"
-
+            routerLinkActive="router-link-active"
           >
             <i class="fas fa-edit"></i>
           </button>

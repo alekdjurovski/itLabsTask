@@ -11,20 +11,21 @@ import { Router } from '@angular/router';
 export class EditComponent implements OnInit {
   btnEnable = false;
   name: number;
-  ngName: any;
+  categories = this._service.categoriesList;
   editId: number;
   editName: string;
   id: number;
   category: any = {
-    // id: null,
-    name: ''
+    name: '',
+    description: '',
     // products: [],
-    // parentCategoryId: null
+    parentCategoryId: null
   };
-  inName: string;
+  ngName: string;
+  ngDesc: string;
+  ngParentId: string;
 
-  constructor(private _service: CategoryService,
-              private router: Router) {}
+  constructor(private _service: CategoryService, private router: Router) {}
 
   ngOnInit() {
     this.editCategory();
@@ -35,16 +36,20 @@ export class EditComponent implements OnInit {
       this.category = res;
       console.log(this.category);
       this.ngName = this.category.name;
+      this.ngDesc = this.category.description;
+      this.ngParentId = this.category.parentCategoryId;
     });
   }
 
   saveCategory() {
     this.category.name = this.ngName;
+    this.category.description = this.ngDesc;
+    this.category.parentCategoryId = this.ngParentId;
     this._service
-      .editCategories(this.category.id, this.category).subscribe(res => {
-        this._service.getCategories();
+      .editCategories(this.category.id, this.category)
+      .subscribe(res => {
+        // this._service.getCategories();
         this.router.navigate(['/categories']);
       });
-
   }
 }

@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ICategories } from '../../../model/category';
 import { CategoryService } from '../../../services/category.service';
 
-
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
@@ -29,9 +28,7 @@ export class CategoriesComponent implements OnInit {
   editRow: ICategories;
   parentId: number;
 
-  constructor(private _service: CategoryService) {
-
-  }
+  constructor(private _service: CategoryService) {}
 
   ngOnInit() {
     this.getCategories();
@@ -40,6 +37,8 @@ export class CategoriesComponent implements OnInit {
   getCategories() {
     this._service.getCategories().subscribe(data => {
       this.categories = data;
+      this.categories.id = this._service.addId;
+      this._service.categoriesList = data;
     });
   }
 
@@ -72,10 +71,9 @@ export class CategoriesComponent implements OnInit {
 
   removeCategory(id) {
     if (confirm('Are you sure you want to perform this action?')) {
-    this._service.deleteCategories(id).subscribe(res => {
-      this.getCategories();
-    });
+      this._service.deleteCategories(id).subscribe(res => {
+        this.getCategories();
+      });
+    }
   }
-}
-
 }

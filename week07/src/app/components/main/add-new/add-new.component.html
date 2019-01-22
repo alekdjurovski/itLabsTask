@@ -5,7 +5,7 @@
     <mat-form-field>
       <input
         matInput
-        [(ngModel)]="inName"
+        [(ngModel)]="ngName"
         placeholder="Enter name of category"
         (input)="(btnEnable)"
         required
@@ -13,23 +13,23 @@
     </mat-form-field>
 
     <mat-form-field>
-      <mat-select placeholder="Parent Categories">
-        <mat-option value="option">Option</mat-option>
+      <mat-select placeholder="Parent Categories" [(ngModel)]="ngParentId">
+        <mat-option *ngFor="let item of categories" [value]="item.id">{{
+          item.name
+        }}</mat-option>
       </mat-select>
     </mat-form-field>
 
     <mat-form-field>
-      <textarea matInput placeholder=" Description "></textarea>
+      <textarea
+        [(ngModel)]="ngDesc"
+        matInput
+        placeholder=" Description "
+      ></textarea>
     </mat-form-field>
 
     <div class="form-inline justify-content-center ">
-      <button
-        type="reset"
-        class="btn btn-style ml-5"
-        (click)="addCategory()"
-        [routerLink]="['/categories']"
-        routerLinkActive="router-link-active"
-      >
+      <button type="reset" class="btn btn-style ml-5" (click)="addCategory()">
         Save
       </button>
       <button
