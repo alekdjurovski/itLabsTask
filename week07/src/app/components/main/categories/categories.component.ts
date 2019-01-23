@@ -20,13 +20,15 @@ export class CategoriesComponent implements OnInit {
   inName: string;
   category: any = {
     // id: null,
-    name: ''
+    name: '',
+    description: '',
     // products: [],
-    // parentCategoryId: null
+    parentCategoryId: null
   };
   oldName: any;
   editRow: ICategories;
   parentId: number;
+  parentName: string;
 
   constructor(private _service: CategoryService) {}
 
@@ -37,9 +39,26 @@ export class CategoriesComponent implements OnInit {
   getCategories() {
     this._service.getCategories().subscribe(data => {
       this.categories = data;
-      this.categories.id = this._service.addId;
+      // this.categories.id = this._service.addId;
       this._service.categoriesList = data;
+      debugger;
+      this.findParent();
     });
+  }
+
+  findParent() {
+    for (let i = 0; i <= this.categories.length; i++) {
+      if (this.categories[i].parentCategoryId) {
+        this.parentId = this.categories[i].parentCategoryId;
+        debugger;
+        for (let x = 0; x <= this.categories.length; x++) {
+          if (this.parentId === this.categories[x].id) {
+            this.parentName = this.categories[x].name;
+          }
+        }
+
+      }
+    }
   }
 
   search() {
@@ -76,5 +95,4 @@ export class CategoriesComponent implements OnInit {
       });
     }
   }
-
 }

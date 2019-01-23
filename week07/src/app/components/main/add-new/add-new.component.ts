@@ -33,4 +33,6 @@ export class AddNewComponent implements OnInit {
       this.router.navigate(['/categories']);
     });
   }
+
+
 }

@@ -41,8 +41,6 @@ export class CategoryService {
     return this.http.get(this.searchUrl + name);
   }
 
-  addNew() {}
-
   deleteCategories(id) {
     return this.http.delete(this.deleteCategoryUrl + id);
   }

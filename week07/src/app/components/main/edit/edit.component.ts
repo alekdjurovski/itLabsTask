@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 export class EditComponent implements OnInit {
   btnEnable = false;
   name: number;
-  categories = this._service.categoriesList;
   editId: number;
   editName: string;
   id: number;
@@ -21,9 +20,11 @@ export class EditComponent implements OnInit {
     // products: [],
     parentCategoryId: null
   };
+
+  categories = this._service.categoriesList;
   ngName: string;
   ngDesc: string;
-  ngParentId: string;
+  ngParentId: number;
 
   nameParent: string;
 
