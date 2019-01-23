@@ -14,8 +14,8 @@ import { MainComponent } from './components/main/main.component';
 import { AddNewComponent } from './components/main/add-new/add-new.component';
 import { EditComponent } from './components/main/edit/edit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatSelectModule, MatInputModule } from '@angular/material';
-
+import { MatSelectModule, MatInputModule, MatDialogModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatFormFieldModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,8 @@ import { MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatSelectModule
     MatButtonModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
   ],
   providers: [
     CategoryService

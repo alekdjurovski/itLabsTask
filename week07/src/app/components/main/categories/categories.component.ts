@@ -12,23 +12,26 @@ export class CategoriesComponent implements OnInit {
   id: number;
   name: string;
   parentCategoryId: number;
+  parentCatName: string;
   searchName: string;
   showSearch = false;
   hideForm = false;
   editName: any;
   editId: number;
   inName: string;
-  category: any = {
-    // id: null,
-    name: '',
-    description: '',
-    // products: [],
-    parentCategoryId: null
-  };
+  categoryList = [
+    {
+      id: null,
+      name: '',
+      description: '',
+      // products: [],
+      parentCategoryId: null,
+      parentCatName: ''
+    }
+  ];
   oldName: any;
   editRow: ICategories;
   parentId: number;
-  parentName: string;
 
   constructor(private _service: CategoryService) {}
 
@@ -41,25 +44,32 @@ export class CategoriesComponent implements OnInit {
       this.categories = data;
       // this.categories.id = this._service.addId;
       this._service.categoriesList = data;
-      debugger;
-      this.findParent();
+      // debugger;
+      // this.findParent();
     });
   }
 
-  findParent() {
-    for (let i = 0; i <= this.categories.length; i++) {
-      if (this.categories[i].parentCategoryId) {
-        this.parentId = this.categories[i].parentCategoryId;
-        debugger;
-        for (let x = 0; x <= this.categories.length; x++) {
-          if (this.parentId === this.categories[x].id) {
-            this.parentName = this.categories[x].name;
-          }
-        }
-
-      }
-    }
-  }
+  // findParent() {
+  //   for (let i = 0; i <= this.categories.length; i++) {
+  //     if (this.categories[i].parentCategoryId) {
+  //       this.parentId = this.categories[i].parentCategoryId;
+  //       debugger;
+  //       for (let x = 0; x <= this.categories.length; x++) {
+  //         if (this.parentId === this.categories[x].id) {
+  //           this.categoryList[i] = {
+  //             id: this.categories[i].id,
+  //             name: this.categories[i].name,
+  //             description: this.categories[i].description,
+  //             parentCategoryId: this.parentId,
+  //             parentCatName: this.categories[x].name
+  //           };
+  //         }
+  //       }
+  //     } else {
+  //       this.categoryList[i] = this.categories[i];
+  //     }
+  //   }
+  // }
 
   search() {
     if (this.searchName) {
@@ -95,4 +105,5 @@ export class CategoriesComponent implements OnInit {
       });
     }
   }
+
 }

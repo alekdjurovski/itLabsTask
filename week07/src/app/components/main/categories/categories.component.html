@@ -51,7 +51,7 @@
       <tr *ngFor="let item of categories">
         <th scope="row">{{ item.id }}</th>
         <td>{{ item.name }}</td>
-        <td >{{ this.parentName }}</td>
+        <td >{{ item.parentCategoryId }}</td>
 
         <td>
           <button
